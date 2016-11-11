@@ -1,4 +1,4 @@
-# Freecodecademy projects
+# Freecodecamp projects
 
 Most projects are developed in [codepen.io](http://codepen.io/airtonbjunior/) to facilitate the Code Review and Feedback from participants.
 
