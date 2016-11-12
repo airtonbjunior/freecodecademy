@@ -17,7 +17,7 @@ var app = angular.module('jsCalculator', [])
 	}
 
 
-	/* Aux functions */
+	/* Auxiliar functions */
 	function isOperator(char) {
 		return char === '+' || char === '-' || char === '*' || char ==='/';
 	}
@@ -54,6 +54,10 @@ var app = angular.module('jsCalculator', [])
 
 
 /*
+	-------------
+	DOCUMENTATION
+	-------------
+
 	References:
 	[a]: http://stackoverflow.com/questions/2276021/evaluating-a-string-as-a-mathematical-expression-in-javascript
 	[b]: http://stackoverflow.com/questions/952924/javascript-chop-slice-trim-off-last-character-in-string
