@@ -57,6 +57,7 @@ var app = angular.module('jsCalculator', [])
 	References:
 	[a]: http://stackoverflow.com/questions/2276021/evaluating-a-string-as-a-mathematical-expression-in-javascript
 	[b]: http://stackoverflow.com/questions/952924/javascript-chop-slice-trim-off-last-character-in-string
+	[c]: http://stackoverflow.com/questions/29715655/html-5-input-type-date-disable-keyboard-input
 
 	Error List:
 	[000]: No operator
@@ -70,6 +71,7 @@ var app = angular.module('jsCalculator', [])
 	[X] Validate operators in the begin/end of expression
 	[X] Clear
 	[X] Validate only numbers (no operator)
+	[X] Validate invalid characters (input don't allow keyboard input [c])
 	[X] Real Numbers (eval)
 	[X] Button Delete (delete the last character)
 	[X] Calculate (eval)

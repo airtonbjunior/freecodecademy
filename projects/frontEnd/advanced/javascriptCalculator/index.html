@@ -7,8 +7,8 @@
 <body ng-app="jsCalculator">
 	<div class="calculator" ng-controller="calcController">
 		<div class="inputs">
-			<input class="calc-chain" ng-model="chain"></input>
-			<input class="calc-result" ng-model="result"></input>
+			<input class="calc-chain" ng-model="chain" onkeydown="return false"></input>
+			<input class="calc-result" ng-model="result" onkeydown="return false"></input>
 		<div>
 		<div class="buttons">
 			<button ng-click="chain = chain + '0'">0</button>
