@@ -6,25 +6,29 @@
 </head>
 <body ng-app="jsCalculator">
 	<div class="calculator" ng-controller="calcController">
-		<input class="calc-chain" ng-model="chain"></input>
-		<input class="calc-result" ng-model="result"></input>
-		<button ng-click="chain = chain + '0'">0</button>
-		<button ng-click="chain = chain + '1'">1</button>
-		<button ng-click="chain = chain + '2'">2</button>
-		<button ng-click="chain = chain + '3'">3</button>
-		<button ng-click="chain = chain + '4'">4</button>
-		<button ng-click="chain = chain + '5'">5</button>
-		<button ng-click="chain = chain + '6'">6</button>
-		<button ng-click="chain = chain + '7'">7</button>
-		<button ng-click="chain = chain + '8'">8</button>
-		<button ng-click="chain = chain + '9'">9</button>
-		<button ng-click="chain = chain + '+'">+</button>
-		<button ng-click="chain = chain + '-'">-</button>
-		<button ng-click="chain = chain + '/'">/</button>
-		<button ng-click="chain = chain + '*'">*</button>
-		<!-- TO-DO: Button DEL: delete the last character -->
-		<button ng-click="chain = ''; result=''">C</button>
-		<button ng-click="result = calc(chain);">=</button>
+		<div class="inputs">
+			<input class="calc-chain" ng-model="chain"></input>
+			<input class="calc-result" ng-model="result"></input>
+		<div>
+		<div class="buttons">
+			<button ng-click="chain = chain + '0'">0</button>
+			<button ng-click="chain = chain + '1'">1</button>
+			<button ng-click="chain = chain + '2'">2</button>
+			<button ng-click="chain = chain + '3'">3</button>
+			<button ng-click="chain = chain + '4'">4</button>
+			<button ng-click="chain = chain + '5'">5</button>
+			<button ng-click="chain = chain + '6'">6</button>
+			<button ng-click="chain = chain + '7'">7</button>
+			<button ng-click="chain = chain + '8'">8</button>
+			<button ng-click="chain = chain + '9'">9</button>
+			<button ng-click="chain = chain + '+'">+</button>
+			<button ng-click="chain = chain + '-'">-</button>
+			<button ng-click="chain = chain + '/'">/</button>
+			<button ng-click="chain = chain + '*'">*</button>
+			<button ng-click="chain = deleteLastChar(chain);">D</button>
+			<button ng-click="chain = ''; result=''">C</button>
+			<button ng-click="result = calc(chain);">=</button>
+		</div>
 	</div>
 </body>
 </html>

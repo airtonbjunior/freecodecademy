@@ -1,26 +1,52 @@
 var app = angular.module('jsCalculator', [])
 
 .controller('calcController', ['$scope', function($scope){
-	//$scope.chain = "";
 
 	$scope.calc = function(expression) {
-		if(isOperator(expression[0]) || isOperator(expression[expression.length-1])) return "Operator Error! [001]";
-		// Change this for to something more beautiful :/
-		for(var i = 0; i < expression.length-1; i++) {
-			if(isOperator(expression[i]) && isOperator(expression[i+1])) {
-				return "Operator Error! [002]"
-			}
-			if(expression[i] === '/' && expression[i+1] === '0') {
-				return "Error! [003]";
-			}
-		}
+		if(!hasOperator(expression)) return "No operator! [000]";
+		if(isOperator(expression[0]) || isOperator(expression[expression.length-1])) return "Operator Error [001]";
+		if(twoOperatorsInSequence(expression)) return "Operators in sequence [002]";
+		if(divisionByZero(expression)) return "Division By Zero [003]";
 
-		return expression;
+		return eval(expression); //[a]
 	}
 
 
+	$scope.deleteLastChar = function(expression) {
+		return expression.slice(0, -1); //[b]
+	}
+
+
+	/* Aux functions */
 	function isOperator(char) {
 		return char === '+' || char === '-' || char === '*' || char ==='/';
+	}
+
+	function hasOperator(expression) {
+		for (var i = 0; i < expression.length; i++) {
+			if(isOperator(expression[i])) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function twoOperatorsInSequence(expression) {
+		for(var i = 0; i < expression.length; i++) {
+			if(isOperator(expression[i]) && isOperator(expression[i+1])) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function divisionByZero(expression) {
+		for(var i = 0; i < expression.length; i++) {
+			if(expression[i] === '/' && expression[i+1] === '0') {
+				return true;
+			}
+		}
+		return false;
 	}
 
 
@@ -28,18 +54,28 @@ var app = angular.module('jsCalculator', [])
 
 
 /*
+	References:
+	[a]: http://stackoverflow.com/questions/2276021/evaluating-a-string-as-a-mathematical-expression-in-javascript
+	[b]: http://stackoverflow.com/questions/952924/javascript-chop-slice-trim-off-last-character-in-string
+
 	Error List:
+	[000]: No operator
 	[001]: First or Last item can not be an operator
 	[002]: Two or more operator in sequence
 	[003]: Division by zero
 
 
 	TO-DO List:
-	[ ] Real Numbers
-	[ ] Button Delete (delete the last character)
-	[ ] Calculate
+	[X] Validate operators in sequence
+	[X] Validate operators in the begin/end of expression
+	[X] Clear
+	[X] Validate only numbers (no operator)
+	[X] Real Numbers (eval)
+	[X] Button Delete (delete the last character)
+	[X] Calculate (eval)
 	[ ] Style
-	[ ] Parentheses*
+	[X] Parentheses* (eval)
+	[ ] Validate Parentheses
 	[ ] Save calcs*
 
 
