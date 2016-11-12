@@ -1,6 +1,8 @@
 # freecodecamp
 Freecodecamp projects
 
+Most projects are developed in [codepen.io](http://codepen.io/airtonbjunior/) to facilitate the Code Review and Feedback from participants.
+
 * Basic Front End Development Projects
   * [#1] [Tribute Page] - [[Solution]](http://codepen.io/airtonbjunior/full/NAQPJZ/)
   * [#2] [Personal Portfolio] - [[Solution]](http://codepen.io/airtonbjunior/full/pbrgAq/)
