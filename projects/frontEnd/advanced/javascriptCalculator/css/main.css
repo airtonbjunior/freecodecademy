@@ -57,17 +57,28 @@ button {
 
 
 /* Begin break the buttons */
-@media all and (min-width: 601px), all and (max-width: 800px) 
+@media screen and (min-width: 601px), screen and (max-width: 800px) 
 {	
 	button {
 		padding: 15px;
 	}
 }
 
-@media (max-width: 600px) 
+@media screen and (max-width: 600px) 
 {	
 	button {
 		font-size: 24px;
+		padding: 1px;
+	}
+	.calculator-wrapper {
+		min-width: 300px;
+	}
+}
+
+@media screen and (max-width: 480px) 
+{
+	button {
+		font-size: 18x;
 		padding: 1px;
 	}
 	.calculator-wrapper {
