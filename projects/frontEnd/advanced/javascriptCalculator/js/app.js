@@ -108,7 +108,7 @@ var app = angular.module('jsCalculator', [])
 	[X] Real Numbers (eval)
 	[X] Button Delete (delete the last character)
 	[X] Calculate (eval)
-	[ ] Style
+	[X] Style
 	[X] Parentheses* (eval)
 	[X] Validate Parentheses
 	[ ] Save calcs*

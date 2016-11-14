@@ -7,7 +7,7 @@
 
 
 .main-wrapper {
-	/* position: relative; */  /* when I use this, the wrapper don't centralize on Firefox */
+	/* position: relative; */  /* when I use this, the wrapper don't centralize vertically on Firefox */
 	background: #512721;
 }
 
