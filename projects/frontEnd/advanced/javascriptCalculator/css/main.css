@@ -5,8 +5,10 @@
             box-sizing: border-box;
 }
 
+
 .main-wrapper {
 	position: relative;
+	background: #47D2E9;
 }
 
 .calculator-wrapper {
@@ -14,9 +16,9 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	border: 2px solid blue;
 	background: gray; 
 	padding: 20px;
+	background: #B6FF75;
 }
 
 input {
@@ -31,10 +33,16 @@ input {
 
 button {
 	padding: 20px;
+	margin: 5px;
 	font-size: 24px;
-	width: 25%;
+	width: 20%;
+	background: #2C544D;
+	color: #fff;
+	border: none;
 }
 
 .buttons {
 	margin-top: 20px;
+	text-align: center;
+
 }

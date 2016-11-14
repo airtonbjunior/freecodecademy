@@ -9,32 +9,37 @@
 			<input class="calc-result" ng-model="result" onkeydown="return false"></input>
 		</div>
 		<div class="buttons">
-			<button ng-click="chain = chain + '0'">0</button>
-			<button ng-click="chain = chain + '1'">1</button>
-			<button ng-click="chain = chain + '2'">2</button>
-			<button ng-click="chain = chain + '3'">3</button>
-			<button ng-click="chain = chain + '4'">4</button>
-			<button ng-click="chain = chain + '5'">5</button>
-			<button ng-click="chain = chain + '6'">6</button>
+			<button ng-click="chain = chain + '('">(</button>
+			<button ng-click="chain = chain + ')'">)</button>
+			<button ng-click="chain = deleteLastChar(chain);">D</button>
+			<button ng-click="chain = ''; result=''">C</button>
+			
 			<button ng-click="chain = chain + '7'">7</button>
 			<button ng-click="chain = chain + '8'">8</button>
 			<button ng-click="chain = chain + '9'">9</button>
-			<button ng-click="chain = chain + '.'">.</button>
-			<button ng-click="chain = chain + '('">(</button>
-			<button ng-click="chain = chain + ')'">)</button>
-			<button ng-click="chain = chain + '+'">+</button>
-			<button ng-click="chain = chain + '-'">-</button>
 			<button ng-click="chain = chain + '/'">/</button>
+
+			<button ng-click="chain = chain + '4'">4</button>
+			<button ng-click="chain = chain + '5'">5</button>
+			<button ng-click="chain = chain + '6'">6</button>
 			<button ng-click="chain = chain + '*'">*</button>
-			<button ng-click="chain = deleteLastChar(chain);">D</button>
-			<button ng-click="chain = ''; result=''">C</button>
+
+			<button ng-click="chain = chain + '1'">1</button>
+			<button ng-click="chain = chain + '2'">2</button>
+			<button ng-click="chain = chain + '3'">3</button>
+			<button ng-click="chain = chain + '-'">-</button>
+			
+			<button ng-click="chain = chain + '0'">0</button>
+			<button ng-click="chain = chain + '.'">.</button>
 			<button ng-click="result = calc(chain);">=</button>
+			<button ng-click="chain = chain + '+'">+</button>
+
 		</div>
 	</div>
 
 	<!-- external files -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<script src="js/app.js"></script>
-	<link href="css/main.css"rel="stylesheet" type="text/css" >
+	<link href="css/main.css" rel="stylesheet" type="text/css" >
 </body>
 </html>
