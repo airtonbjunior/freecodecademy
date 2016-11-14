@@ -79,7 +79,7 @@ button {
 {
 	button {
 		font-size: 18x;
-		padding: 1px;
+		padding: 10px;
 	}
 	.calculator-wrapper {
 		min-width: 300px;
