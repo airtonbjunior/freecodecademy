@@ -7,6 +7,7 @@ var app = angular.module('jsCalculator', [])
 		if(isOperator(expression[0]) || isOperator(expression[expression.length-1])) return "Operator Error [001]";
 		if(twoOperatorsInSequence(expression)) return "Operators in sequence [002]";
 		if(divisionByZero(expression)) return "Division By Zero [003]";
+		if(!parenthesesCorrect(expression)) return "Incorrect parentheses chain [004]";
 
 		return eval(expression); //[a]
 	}
@@ -19,7 +20,7 @@ var app = angular.module('jsCalculator', [])
 
 	/* Auxiliar functions */
 	function isOperator(char) {
-		return char === '+' || char === '-' || char === '*' || char ==='/';
+		return char === '+' || char === '-' || char === '*' || char === '/' || char === '.';
 	}
 
 	function hasOperator(expression) {
@@ -49,6 +50,28 @@ var app = angular.module('jsCalculator', [])
 		return false;
 	}
 
+	function parenthesesCorrect(expression) {
+		if(expression[0] === ")" || expression[expression.length-1] === "(") return false;
+		if(expression.split("(").length - 1 !== expression.split(")").length - 1) return false;
+
+		// Validate operator and close parentheses in sequence
+		for(var i = 0; i < expression.length; i++) {
+			// Operator and close parentheses
+			if(isOperator(expression[i]) && expression[i+1] === ")") {
+				return false;
+			}
+			// empty parentheses
+			if(expression[i] === "(" && expression[i+1] === ")") {
+				return false;
+			}
+			// number and ( in sequence
+			if(!isOperator(expression[i]) && expression[i+1] === "(") {
+				return false;
+			}
+		}
+		return true;
+	}
+
 
 }]);
 
@@ -68,6 +91,7 @@ var app = angular.module('jsCalculator', [])
 	[001]: First or Last item can not be an operator
 	[002]: Two or more operator in sequence
 	[003]: Division by zero
+	[004]: Incorrect parentheses chain
 
 
 	TO-DO List:
@@ -81,8 +105,10 @@ var app = angular.module('jsCalculator', [])
 	[X] Calculate (eval)
 	[ ] Style
 	[X] Parentheses* (eval)
-	[ ] Validate Parentheses
+	[X] Validate Parentheses
 	[ ] Save calcs*
+	[ ] Accept .n when is a fraction < 1 (example: .5 instead 0.5)*
+	[ ] Division by zero inside the parentheses*
 
 
 	*Optional
