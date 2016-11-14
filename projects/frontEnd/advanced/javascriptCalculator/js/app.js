@@ -2,7 +2,10 @@ var app = angular.module('jsCalculator', [])
 
 .controller('calcController', ['$scope', function($scope){
 
+	$scope.chain = "";
+
 	$scope.calc = function(expression) {
+		if(expression.length === 0) return "";
 		if(!hasOperator(expression)) return "No operator! [000]";
 		if(isOperator(expression[0]) || isOperator(expression[expression.length-1])) return "Operator Error [001]";
 		if(twoOperatorsInSequence(expression)) return "Operators in sequence [002]";
