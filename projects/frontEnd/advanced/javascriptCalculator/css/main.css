@@ -19,7 +19,7 @@
     -webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	background: gray; 
-	padding: 20px;
+	padding: 20px 20px 0px 20px;
 	background: #BB5040;
 	/*min-width: 300px;*/
 	max-width: 500px;
@@ -60,6 +60,25 @@ button {
 	color: #939393;
 }
 
+.social-buttons {
+	color: #fff;
+	margin-top: 30px;
+	background: #512721;
+	margin: 30px -30px -30px -30px;
+	text-align: center;
+	padding-top: 30px;
+}
+.social-buttons > a {
+	margin-right: 10px;
+}
+.social-buttons > a:hover {
+	color: #BB5040;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
 
 /* Begin break the buttons */
 @media screen and (min-width: 601px), screen and (max-width: 800px) 

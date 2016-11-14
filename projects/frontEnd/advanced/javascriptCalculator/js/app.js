@@ -6,11 +6,11 @@ var app = angular.module('jsCalculator', [])
 
 	$scope.calc = function(expression) {
 		if(expression.length === 0) return "";
-		if(!hasOperator(expression)) return "No operator! [000]";
-		if(isOperator(expression[0]) || isOperator(expression[expression.length-1])) return "Operator Error [001]";
-		if(twoOperatorsInSequence(expression)) return "Operators in sequence [002]";
-		if(divisionByZero(expression)) return "Division By Zero [003]";
-		if(!parenthesesCorrect(expression)) return "Incorrect parentheses chain [004]";
+		if(!hasOperator(expression)) return "Error [000]";
+		if(isOperator(expression[0]) || isOperator(expression[expression.length-1])) return "Error [001]";
+		if(twoOperatorsInSequence(expression)) return "Error [002]";
+		if(divisionByZero(expression)) return "Error [003]";
+		if(!parenthesesCorrect(expression)) return "Error [004]";
 
 		return eval(expression); //[a]
 	}
@@ -115,6 +115,7 @@ var app = angular.module('jsCalculator', [])
 	[ ] Division by zero inside the parentheses*
 	[X] Initial focus on the input (isn't necessary)
 	[ ] Validate strange chars in calc input (sometimes is possible put strange symbols) 
+	[ ] Show error list (toggle area)
 
 	*Optional
 */
