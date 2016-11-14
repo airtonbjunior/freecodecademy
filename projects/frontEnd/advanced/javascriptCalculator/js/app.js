@@ -89,6 +89,7 @@ var app = angular.module('jsCalculator', [])
 	[b]: http://stackoverflow.com/questions/952924/javascript-chop-slice-trim-off-last-character-in-string
 	[c]: http://stackoverflow.com/questions/29715655/html-5-input-type-date-disable-keyboard-input
 	[d]: http://sergiolopes.org/css-box-sizing-border-box/
+	[e]: https://enkipro.com/insight/55ad9d8afa76a84d00e07243
 
 	Error List:
 	[000]: No operator

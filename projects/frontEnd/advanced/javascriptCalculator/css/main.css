@@ -43,6 +43,10 @@ button {
 	background: #2E292D;
 	color: #fff;
 	border: none;
+	border: 2px solid transparent; /* Good Idea, see on [e] */
+}
+button:active {
+	border: 2px solid #fff;
 }
 
 .buttons {
