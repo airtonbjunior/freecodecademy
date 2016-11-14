@@ -57,7 +57,7 @@ button {
 
 
 /* Begin break the buttons */
-@media (min-width: 601px) and (max-width: 800px) 
+@media all and (min-width: 601px), all and (max-width: 800px) 
 {	
 	button {
 		padding: 15px;
