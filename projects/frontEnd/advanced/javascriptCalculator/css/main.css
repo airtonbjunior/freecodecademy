@@ -66,9 +66,8 @@ button:active {
 
 .social-buttons {
 	color: #fff;
-	margin-top: 30px;
 	background: #512721;
-	margin: 30px -30px -30px -30px;
+	margin: 20px -30px -30px -30px;
 	text-align: center;
 	padding-top: 20px;
 }
