@@ -88,6 +88,7 @@ var app = angular.module('jsCalculator', [])
 	[a]: http://stackoverflow.com/questions/2276021/evaluating-a-string-as-a-mathematical-expression-in-javascript
 	[b]: http://stackoverflow.com/questions/952924/javascript-chop-slice-trim-off-last-character-in-string
 	[c]: http://stackoverflow.com/questions/29715655/html-5-input-type-date-disable-keyboard-input
+	[d]: http://sergiolopes.org/css-box-sizing-border-box/
 
 	Error List:
 	[000]: No operator
@@ -112,7 +113,8 @@ var app = angular.module('jsCalculator', [])
 	[ ] Save calcs*
 	[ ] Accept .n when is a fraction < 1 (example: .5 instead 0.5)*
 	[ ] Division by zero inside the parentheses*
-
+	[X] Initial focus on the input (isn't necessary)
+	[ ] Validate strange chars in calc input (sometimes is possible put strange symbols) 
 
 	*Optional
 */
