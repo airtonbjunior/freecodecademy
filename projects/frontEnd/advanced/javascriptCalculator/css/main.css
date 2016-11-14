@@ -57,7 +57,7 @@ button {
 
 .calc-chain {
 	font-size: 18px;
-	color: gray;
+	color: #939393;
 }
 
 
@@ -98,6 +98,6 @@ button {
 	}
 	.calc-chain {
 		font-size: 12px;
-		color: gray;
+		color: #939393;
 	}
 }
