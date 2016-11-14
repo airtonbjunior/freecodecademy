@@ -8,7 +8,7 @@
 
 .main-wrapper {
 	/* position: relative; */  /* when I use this, the wrapper don't centralize on Firefox */
-	background: #47D2E9;
+	background: #512721;
 }
 
 .calculator-wrapper {
@@ -20,9 +20,9 @@
 	transform: translate(-50%, -50%);
 	background: gray; 
 	padding: 20px;
-	background: #88aa64;
+	background: #BB5040;
 	/*min-width: 300px;*/
-	max-width: 600px;
+	max-width: 500px;
 }
 
 input {
@@ -40,7 +40,7 @@ button {
 	margin: 5px;
 	font-size: 32px;
 	width: 20%;
-	background: #2C544D;
+	background: #2E292D;
 	color: #fff;
 	border: none;
 }
