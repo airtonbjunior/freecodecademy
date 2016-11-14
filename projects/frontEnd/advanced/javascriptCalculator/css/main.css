@@ -27,11 +27,11 @@
 
 input {
 	text-align: right;
-	width: 80%;
+	width: 90%;
 	outline: none;
 	border: 0;
 	appearance: none;
-	font-size: 24px;
+	font-size: 28px;
 	padding: 10px;
 }
 
@@ -55,6 +55,11 @@ button {
 	text-align: center;
 }
 
+.calc-chain {
+	font-size: 18px;
+	color: gray;
+}
+
 
 /* Begin break the buttons */
 @media screen and (min-width: 601px), screen and (max-width: 800px) 
@@ -68,10 +73,13 @@ button {
 {	
 	button {
 		font-size: 24px;
-		padding: 1px;
+		padding: 10px 0px 10px 0px;
 	}
 	.calculator-wrapper {
 		min-width: 300px;
+	}
+	input {
+		width: 100%;
 	}
 }
 
@@ -79,9 +87,17 @@ button {
 {
 	button {
 		font-size: 18px;
-		padding: 3px 0px 3px 0px;
+		padding: 10px 0px 10px 0px;
 	}
 	.calculator-wrapper {
 		min-width: 310px;
+	}
+	input {
+		width: 100%;
+		font-size: 22px;
+	}
+	.calc-chain {
+		font-size: 12px;
+		color: gray;
 	}
 }
