@@ -7,7 +7,7 @@
 
 
 .main-wrapper {
-	position: relative;
+	/* position: relative; */  /* when I use this, the wrapper don't centralize on Firefox */
 	background: #47D2E9;
 }
 
@@ -15,15 +15,19 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	-moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	background: gray; 
 	padding: 20px;
-	background: #B6FF75;
+	background: #88aa64;
+	min-width: 400px;
+	max-width: 600px;
 }
 
 input {
 	text-align: right;
-	width: 100%;
+	width: 80%;
 	outline: none;
 	border: 0;
 	appearance: none;
@@ -32,9 +36,9 @@ input {
 }
 
 button {
-	padding: 20px;
+	padding: 25px;
 	margin: 5px;
-	font-size: 24px;
+	font-size: 32px;
 	width: 20%;
 	background: #2C544D;
 	color: #fff;
@@ -45,4 +49,8 @@ button {
 	margin-top: 20px;
 	text-align: center;
 
+}
+
+.inputs {
+	text-align: center;
 }
