@@ -13,4 +13,4 @@ Most projects are developed in [codepen.io](http://codepen.io/airtonbjunior/) to
   * [#6] [Twitchtv API] - [[Solution]](http://codepen.io/airtonbjunior/full/YGqVqR/)
 
 * Advanced Front End Development Projects
- * [#7] [Javascript Calculator] - [[Specification]](https://www.freecodecamp.com/challenges/build-a-javascript-calculator)  [[Solution]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/advanced/javascriptCalculator/)
+ * [#7] [Javascript Calculator] - [[Specification]](https://www.freecodecamp.com/challenges/build-a-javascript-calculator)  [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/advanced/javascriptCalculator/) [[Solution codepen]](http://codepen.io/airtonbjunior/full/mOrVQg/)
