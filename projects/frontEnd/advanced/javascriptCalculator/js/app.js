@@ -11,6 +11,7 @@ var app = angular.module('jsCalculator', [])
 		if(twoOperatorsInSequence(expression)) return "Error [002]";
 		if(divisionByZero(expression)) return "Error [003]";
 		if(!parenthesesCorrect(expression)) return "Error [004]";
+		if(strangerChars(expression)) return "Error [005]";
 
 		return eval(expression); //[a]
 	}
@@ -75,6 +76,14 @@ var app = angular.module('jsCalculator', [])
 		return true;
 	}
 
+	function strangerChars(expression) {
+		for(var i = 0; i < expression.length; i++) {
+			if(!isOperator(expression[i]) && isNaN(expression[i])) {
+				return true;
+			}			
+		}
+		return false;
+	}
 
 }]);
 
@@ -97,6 +106,7 @@ var app = angular.module('jsCalculator', [])
 	[002]: Two or more operator in sequence
 	[003]: Division by zero
 	[004]: Incorrect parentheses chain
+	[005]: Stranger chars
 
 
 	TO-DO List:
@@ -115,7 +125,7 @@ var app = angular.module('jsCalculator', [])
 	[ ] Accept .n when is a fraction < 1 (example: .5 instead 0.5)*
 	[ ] Division by zero inside the parentheses*
 	[X] Initial focus on the input (isn't necessary)
-	[ ] Validate strange chars in calc input (sometimes is possible put strange symbols) 
+	[X] Validate strange chars in calc input (sometimes is possible put strange symbols) 
 	[ ] Show error list (toggle area)
 
 	*Optional
