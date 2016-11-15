@@ -14,3 +14,4 @@ Most projects are developed in [codepen.io](http://codepen.io/airtonbjunior/) to
 
 * Advanced Front End Development Projects
  * [#7] [Javascript Calculator] - [[Specification]](https://www.freecodecamp.com/challenges/build-a-javascript-calculator)  [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/advanced/javascriptCalculator/) [[Solution codepen]](http://codepen.io/airtonbjunior/full/mOrVQg/)
+ * [#8] [Pomodoro Clock] - [[Specification]](https://www.freecodecamp.com/challenges/build-a-pomodoro-clock)  [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/advanced/pomodoroClock/)
