@@ -12,6 +12,7 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 	var stopped;;
 
 
+ 	// [1]
 	$scope.startClock = function() {
 		stopped = $timeout(function() {
 			if($scope.clockTime > 0) {
@@ -49,3 +50,11 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 
 
 }]);
+
+/*
+	References:
+
+	[1]: https://codepen.io/MehmetCanker/pen/jluqp
+
+
+*/
