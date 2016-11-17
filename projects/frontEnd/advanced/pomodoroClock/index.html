@@ -4,20 +4,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Pomodoro Clock</title>
 </head>
-<body>
+
+<body ng-app="pomodoro" ng-controller="pomodoroController">
 	<div class="rest-time">
-		<button>+</button>
-		<input></input>
-		<button>-</button>
+		<button ng-click="increment(restTime, 0);">+</button>
+		<span> {{ restTime }} </span>
+		<button ng-click="decrement(restTime, 0);">-</button>
 	</div>
 	<div class="pomodoro-time">
-		<button>+</button>
-		<input></input>
-		<button>-</button>
+		<button ng-click="increment(pomodoroTime, 1)">+</button>
+		<span> {{ pomodoroTime }} </span>
+		<button ng-click="decrement(pomodoroTime, 1)">-</button>
 	</div>
 	<div class="clock">
-		<input></input>
+		<span> {{ clockTime }} </span>
+		<button ng-click="startClock();">Start</button>
 	</div>
 	<div class="social-buttons"></div>
+
+
+	<!-- Includes -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
