@@ -16,6 +16,8 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 	var stopped;
 	var start = true;
 
+	//var audio = new Audio('audio/alarm.mp3'); // Change this sound. Search another mp3 free/open. I'm using just for test
+	var audio = new Audio('audio/beep.mp3'); // [2]
 
  	// [1]
  	// when the function is called by recursion, I don't want change the label
@@ -53,10 +55,12 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 						if(actualClock == "pomodoro") {
 							$scope.clockTimeMinutes = $scope.restTime;
 							actualClock = "rest";
+							audio.play();
 						}
 						else {
 							$scope.clockTimeMinutes = $scope.pomodoroTime;
 							actualClock = "pomodoro";
+							audio.play();
 						}
 					}
 
@@ -98,7 +102,7 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 	References:
 
 	[1]: https://codepen.io/MehmetCanker/pen/jluqp
-
+	[2]: https://notificationsounds.com/notification-sounds/beep-472
 
 	TO-DO:
 
@@ -108,6 +112,8 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 	[ ] Improve the code
 	[ ] Pomodoro quantities
 	[ ] Include a 0 before a number if < 10
+	[ ] Change the mp3 - doesn't allow publish on internet
+
 
 	* optional
 
