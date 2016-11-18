@@ -3,27 +3,70 @@ var app = angular.module('pomodoro', []);
 app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $timeout){
 
 
-	$scope.restTime = 0;
-	$scope.pomodoroTime = 0;
+	$scope.restTime = 5;
+	$scope.pomodoroTime = 25;
 
-	$scope.clockTime = $scope.pomodoroTime;
+	$scope.clockTimeMinutes = $scope.pomodoroTime;
+	$scope.clockTimeSeconds = "00";
 
-	
-	var stopped;;
+	$scope.startStopButtonLabel = "Start";
+	$scope.zeroMinutes = $scope.zeroSeconds = "";
+
+	var actualClock = "pomodoro";
+	var stopped;
+	var start = true;
 
 
  	// [1]
-	$scope.startClock = function() {
-		stopped = $timeout(function() {
-			if($scope.clockTime > 0) {
-				$scope.clockTime--;
-				$scope.startClock();
+ 	// when the function is called by recursion, I don't want change the label
+	$scope.startStopClock = function(recursion) {
+		if(recursion === undefined) recursion = false;
+		if(!recursion) {
+			if (start) {
+				$scope.startStopButtonLabel = "Stop";
+				$scope.startStopClock(true);
 			}
 			else {
-				$scope.clockTime = "Acabou. Agora vou chamar um som e a funcao de descanso";
+				$scope.startStopButtonLabel = "Start";
+				$timeout.cancel(stopped);
 			}
-		}, 1000);
+			start = !start;
+		}
+		else {
+			stopped = $timeout(function() {
+				if($scope.clockTimeMinutes > 0) {
+					if($scope.clockTimeSeconds > 0) {
+						$scope.clockTimeSeconds--;
+					} else {
+						$scope.clockTimeSeconds = 59;
+						$scope.clockTimeMinutes--;
+					}
+					$scope.startStopClock(true);
+				}
+				else {
+					if($scope.clockTimeSeconds > 0) {
+						$scope.clockTimeSeconds--;
+					} else {
+						$scope.clockTimeSeconds = 00;
+						$scope.clockTimeMinutes = 00;
+
+						if(actualClock == "pomodoro") {
+							$scope.clockTimeMinutes = $scope.restTime;
+							actualClock = "rest";
+						}
+						else {
+							$scope.clockTimeMinutes = $scope.pomodoroTime;
+							actualClock = "pomodoro";
+						}
+					}
+
+					// Call recursion again
+					$scope.startStopClock(true);
+				}
+			}, 1000);
+		}
 	};
+
 
 	/*
 		increment and decrement functions 
@@ -37,7 +80,7 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 		if (input == 0) 
 			$scope.restTime = value + 1
 		else
-			$scope.clockTime = $scope.pomodoroTime = value + 1;
+			$scope.clockTimeMinutes = $scope.pomodoroTime = value + 1;
 	}
 
 	$scope.decrement = function(value, input) {
@@ -45,7 +88,7 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 			if(input == 0)
 				$scope.restTime = value - 1;
 			else
-				$scope.clockTime = $scope.pomodoroTime = value - 1;
+				$scope.clockTimeMinutes = $scope.pomodoroTime = value - 1;
 	}
 
 
@@ -56,5 +99,16 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 
 	[1]: https://codepen.io/MehmetCanker/pen/jluqp
 
+
+	TO-DO:
+
+	[X] Toggle Button Start/Stop*
+	[X] Default values - 25 min pomodoro and 5 minutes rest
+	[ ] Sound when a pomodoro/rest finished
+	[ ] Improve the code
+	[ ] Pomodoro quantities
+	[ ] Include a 0 before a number if < 10
+
+	* optional
 
 */

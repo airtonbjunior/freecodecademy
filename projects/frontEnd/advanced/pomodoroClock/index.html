@@ -8,17 +8,21 @@
 <body ng-app="pomodoro" ng-controller="pomodoroController">
 	<div class="rest-time">
 		<button ng-click="increment(restTime, 0);">+</button>
-		<span> {{ restTime }} </span>
+		<span> {{ restTime }}</span>
 		<button ng-click="decrement(restTime, 0);">-</button>
 	</div>
 	<div class="pomodoro-time">
 		<button ng-click="increment(pomodoroTime, 1)">+</button>
-		<span> {{ pomodoroTime }} </span>
+		<span> {{ pomodoroTime }}</span>
 		<button ng-click="decrement(pomodoroTime, 1)">-</button>
 	</div>
 	<div class="clock">
-		<span> {{ clockTime }} </span>
-		<button ng-click="startClock();">Start</button>
+		<span>{{ clockTimeMinutes }}:{{ clockTimeSeconds }}</span>
+		<button ng-click="startStopClock();"> {{ startStopButtonLabel }} </button>
+		<!--
+		<button ng-click="startClock();"> {{ startStopButtonLabel }} </button>
+		<button ng-click="stopClock();">Stop</button>
+		-->
 	</div>
 	<div class="social-buttons"></div>
 
