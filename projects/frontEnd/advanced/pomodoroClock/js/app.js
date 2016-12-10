@@ -3,7 +3,7 @@ var app = angular.module('pomodoro', []);
 app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $timeout){
 
 
-	$scope.restTime = 5;
+	$scope.restTime = '05';
 	$scope.pomodoroTime = 25;
 
 	$scope.clockTimeMinutes = $scope.pomodoroTime;

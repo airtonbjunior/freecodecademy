@@ -10,13 +10,32 @@
 }
 
 body{
-	background: #666;
+	background: #1d1e22;
 }
 
 button {
 	font-size: 2em;
-	margin: 5px;
-	padding: 5px;
+	padding: 5px 15px 5px 15px;
+	background: #feda6a;
+	border: 0;
+}
+
+span {
+	font-size: 2em;
+	background: #393f4d;	
+	padding: 5px 15px 5px 15px;
+	color: #fff;
+}
+
+p {
+	font-size: 2em;
+	margin-bottom: 10px;
+	color: #fff;
+}
+
+.clock-title{
+	width: 100%;
+	text-align: center;
 }
 
 .start-stop-button {
@@ -30,10 +49,12 @@ button {
 
 .controls div {
 	float: left;
+	margin: 20px 5px 20px 5px;
 }
 
 .time-choosed {
 	text-align: center; /* to use "margin: 0 auto;", the element must have a width that is not auto*/
+	margin-bottom: 10px;
 }
 
 .main-wrapper {
