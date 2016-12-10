@@ -81,18 +81,27 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 		Try to improve this. Use a more elegant way to do this :)
 	*/
 	$scope.increment = function(value, input) {
-		if (input == 0) 
-			$scope.restTime = value + 1
-		else
-			$scope.clockTimeMinutes = $scope.pomodoroTime = value + 1;
+		if(value < 99) { // limit (don't mess my layout, baby!)
+			var newValue = parseInt(value) + 1;
+			if(newValue < 10) newValue = '0' + newValue;
+
+			if (input == 0) 
+				$scope.restTime = newValue
+			else
+				$scope.clockTimeMinutes = $scope.pomodoroTime = newValue;
+		}
 	}
 
 	$scope.decrement = function(value, input) {
-		if(value > 0) 
+		if(value > 1) {
+			var newValue = value - 1;
+			if(newValue < 10) newValue = '0' + newValue;
+
 			if(input == 0)
-				$scope.restTime = value - 1;
+				$scope.restTime = newValue;
 			else
-				$scope.clockTimeMinutes = $scope.pomodoroTime = value - 1;
+				$scope.clockTimeMinutes = $scope.pomodoroTime = newValue;
+		}
 	}
 
 
@@ -108,12 +117,12 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 
 	[X] Toggle Button Start/Stop*
 	[X] Default values - 25 min pomodoro and 5 minutes rest
-	[ ] Sound when a pomodoro/rest finished
+	[X] Sound when a pomodoro/rest finished
 	[ ] Improve the code
 	[ ] Pomodoro quantities
-	[ ] Include a 0 before a number if < 10
+	[X] Include a 0 before a number if < 10
 	[ ] Change the mp3 - doesn't allow publish on internet
-
+	[X] Don't allow 0 minutes
 
 	* optional
 
