@@ -13,19 +13,35 @@ body{
 	background: #666;
 }
 
-.main-wrapper {
-	/* position: absolute; */
-	background: #000;
-}
-
 button {
 	font-size: 2em;
 	margin: 5px;
 	padding: 5px;
 }
 
+.start-stop-button {
+	width: 100%;
+}
 
-/* My Styles */
+/* Pomodoro and Rest Control */
+.controls {
+	background: #fff;
+}
+
+.controls > div {
+	float: left;
+}
+
+.time-choosed {
+	text-align: center; /* to use "margin: 0 auto;", the element must have a width that is not auto*/
+}
+
+.main-wrapper {
+	/* position: absolute; */
+	background: #000;
+}
+
+
 .wrapper-clock {
 	position: absolute;
 	top: 50%;
