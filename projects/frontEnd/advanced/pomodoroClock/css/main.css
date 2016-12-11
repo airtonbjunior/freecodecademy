@@ -21,21 +21,26 @@ button {
 }
 
 span {
-	font-size: 2em;
-	background: #393f4d;	
+	font-size: 2em;	
 	padding: 5px 15px 5px 15px;
 	color: #fff;
+	margin: 0;
 }
 
 p {
 	font-size: 2em;
 	margin-bottom: 10px;
 	color: #fff;
+	background: #393f4d;
 }
 
 .clock-title{
 	width: 100%;
 	text-align: center;
+}
+
+.clock {
+	margin: 0px 5px 0px 5px;
 }
 
 .start-stop-button {

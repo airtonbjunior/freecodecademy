@@ -123,6 +123,7 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 	[X] Include a 0 before a number if < 10
 	[ ] Change the mp3 - doesn't allow publish on internet
 	[X] Don't allow 0 minutes
+	[ ] Reset Button
 
 	* optional
 
