@@ -34,6 +34,15 @@ p {
 	background: #393f4d;
 }
 
+.button-reset {
+	float: right;
+}
+
+.button-reset:active {
+	background: #393f4d;
+	color: #fff;
+}
+
 .clock-title{
 	width: 100%;
 	text-align: center;
@@ -60,6 +69,7 @@ p {
 .time-choosed {
 	text-align: center; /* to use "margin: 0 auto;", the element must have a width that is not auto*/
 	margin-bottom: 10px;
+	padding-left: 32px; /* centralize, because i have a reset icon 32x32 on right side */
 }
 
 .main-wrapper {

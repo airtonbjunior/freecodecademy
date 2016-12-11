@@ -104,6 +104,16 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 		}
 	}
 
+	$scope.reset = function () {
+		$scope.startStopButtonLabel = "Start";
+		$timeout.cancel(stopped);
+
+		$scope.clockTimeMinutes = $scope.pomodoroTime;
+		$scope.clockTimeSeconds = "00";
+
+		if (!start) start = !start;
+	}
+
 
 }]);
 
@@ -123,7 +133,8 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 	[X] Include a 0 before a number if < 10
 	[ ] Change the mp3 - doesn't allow publish on internet
 	[X] Don't allow 0 minutes
-	[ ] Reset Button
+	[X] Reset Button
+	[ ] Media queryies for responsiveness
 
 	* optional
 
