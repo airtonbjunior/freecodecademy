@@ -81,6 +81,11 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 					$scope.startStopClock(true);
 				}
 				$scope.progressValue = $scope.progressValue + 1; // I know ++ and += notation :D
+
+				/* Put a '0' in front of a number less than 10 (more elegant and keep the pattern hh:mm) */
+				if($scope.clockTimeSeconds < 10) $scope.clockTimeSeconds = '0' + parseInt($scope.clockTimeSeconds);
+				if($scope.clockTimeMinutes < 10) $scope.clockTimeMinutes = '0' + parseInt($scope.clockTimeMinutes);
+
 			}, 1000);
 		}
 	};
