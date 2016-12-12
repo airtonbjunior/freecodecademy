@@ -135,7 +135,7 @@ progress::-moz-progress-bar {
 }
 
 
-@media screen and (min-width: 353px) and (max-width: 677px) {
+@media screen and (min-width: 353px) and (max-width: 747px) {
 	
 	.controls div {
 		width: 100%;
