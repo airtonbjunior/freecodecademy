@@ -135,7 +135,7 @@ progress::-moz-progress-bar {
 }
 
 
-@media screen and (min-width: 339px) and (max-width: 677px) {
+@media screen and (min-width: 353px) and (max-width: 677px) {
 	
 	.controls div {
 		width: 100%;
@@ -147,7 +147,7 @@ progress::-moz-progress-bar {
 	}
 }
 
-@media screen and (max-width: 339px) {
+@media screen and (max-width: 353px) {
 	
 	.controls div {
 		width: 100%;
@@ -230,5 +230,52 @@ progress::-moz-progress-bar {
 
 	.social-buttons {
 		font-size: .8em;
+	}
+}
+
+@media screen and (max-width: 266px) {
+	
+	.controls div {
+		width: 100%;
+		margin: 20px 5px 20px 5px;
+	}
+
+	.pomodoro-time, .rest-time {
+		text-align: center;
+	}
+
+
+	button {
+		font-size: 1em;
+		padding: 1.5px 10px 1.5px 10px;
+	}
+	
+	p {
+		font-size: 1em;
+		margin-bottom: 10px;
+	}
+	span {
+		font-size: 1em;	
+		padding: 5px 15px 5px 15px;
+		color: #fff;
+		margin: 0;
+	}
+	
+	.button-reset {
+		/* resize the svg image for reset */
+		transform:scale(0.3); 
+		-webkit-transform:scale(0.3); 
+		-moz-transform:scale(0.3); 
+		-ms-transform:scale(0.3); 
+		-o-transform:scale(0.3);
+		float: right;
+	}
+
+	.time-choosed {
+		font-size: .8em;
+	}
+
+	.social-buttons {
+		font-size: .7em;
 	}
 }
