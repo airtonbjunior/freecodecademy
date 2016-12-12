@@ -2,7 +2,7 @@ var app = angular.module('pomodoro', []);
 
 app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $timeout){
 
-
+	/* Initiate the vars */
 	$scope.restTime = '05';
 	$scope.pomodoroTime = 25;
 
@@ -16,6 +16,10 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 	var stopped;
 	var start = true;
 
+	/* Progress bar values */
+	$scope.progressMaxValue = $scope.pomodoroTime * 60; // pomodoroTime in seconds, because the bar refresh each second
+	$scope.progressValue    = 0;
+
 	//var audio = new Audio('audio/alarm.mp3'); // Change this sound. Search another mp3 free/open. I'm using just for test
 	var audio = new Audio('audio/beep.mp3'); // [2]
 
@@ -26,6 +30,12 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 		if(!recursion) {
 			if (start) {
 				$scope.startStopButtonLabel = "Stop";
+
+				if(actualClock == "pomodoro") 
+					$scope.progressMaxValue = $scope.pomodoroTime * 60; // set the maxvalue of the progress bar here (actual value, the user can change)
+				else
+					$scope.progressMaxValue = $scope.restTime * 60; // set the maxvalue of the progress bar here (actual value, the user can change)
+				
 				$scope.startStopClock(true);
 			}
 			else {
@@ -51,15 +61,18 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 					} else {
 						$scope.clockTimeSeconds = 00;
 						$scope.clockTimeMinutes = 00;
+						$scope.progressValue    = 0; // restart the progress bar
 
 						if(actualClock == "pomodoro") {
 							$scope.clockTimeMinutes = $scope.restTime;
 							actualClock = "rest";
+							$scope.progressMaxValue = $scope.restTime * 60; // change the progress bar to represent the rest time
 							audio.play();
 						}
 						else {
 							$scope.clockTimeMinutes = $scope.pomodoroTime;
 							actualClock = "pomodoro";
+							$scope.progressMaxValue = $scope.pomodoroTime * 60; // change the progress bar to represent the pomodoro time
 							audio.play();
 						}
 					}
@@ -67,6 +80,7 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 					// Call recursion again
 					$scope.startStopClock(true);
 				}
+				$scope.progressValue = $scope.progressValue + 1; // I know ++ and += notation :D
 			}, 1000);
 		}
 	};
@@ -86,7 +100,7 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 			if(newValue < 10) newValue = '0' + newValue;
 
 			if (input == 0) 
-				$scope.restTime = newValue
+				$scope.restTime = newValue;
 			else
 				$scope.clockTimeMinutes = $scope.pomodoroTime = newValue;
 		}
@@ -110,6 +124,8 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 
 		$scope.clockTimeMinutes = $scope.pomodoroTime;
 		$scope.clockTimeSeconds = "00";
+
+		$scope.progressValue = 0; // fill the progress bar
 
 		if (!start) start = !start;
 	}
@@ -135,6 +151,8 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 	[X] Don't allow 0 minutes
 	[X] Reset Button
 	[ ] Media queryies for responsiveness
+	[ ] Progress bar
+	[ ] 
 
 	* optional
 
