@@ -152,7 +152,6 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 	[X] Reset Button
 	[ ] Media queryies for responsiveness
 	[ ] Progress bar
-	[ ] 
 
 	* optional
 

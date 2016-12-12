@@ -34,6 +34,11 @@ p {
 	background: #393f4d;
 }
 
+a {
+	text-decoration: none;
+	color: #feda6a;
+}
+
 /* how progress works: https://css-tricks.com/html5-progress-element/ and http://stackoverflow.com/questions/18368202/how-to-set-color-for-css3-html5-progress-element */
 progress {
 	-webkit-appearance: none;
@@ -64,7 +69,13 @@ progress::-moz-progress-bar {
 
 
 
-
+.social-buttons {
+	text-align: center;
+	margin-top: 50px;
+}
+.social-buttons > a:hover {
+	color: yellow;
+}
 
 .progress-bar {
 	margin: 15px 5px 15px 5px;
@@ -121,4 +132,103 @@ progress::-moz-progress-bar {
 	-moz-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
+}
+
+
+@media screen and (min-width: 339px) and (max-width: 677px) {
+	
+	.controls div {
+		width: 100%;
+		margin: 20px 5px 20px 5px;
+	}
+
+	.pomodoro-time, .rest-time {
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 339px) {
+	
+	.controls div {
+		width: 100%;
+		margin: 20px 5px 20px 5px;
+	}
+
+	.pomodoro-time, .rest-time {
+		text-align: center;
+	}
+
+
+	button {
+		font-size: 1.5em;
+		padding: 1.5px 10px 1.5px 10px;
+	}
+	
+	p {
+		font-size: 1.5em;
+		margin-bottom: 10px;
+	}
+	span {
+		font-size: 1.5em;	
+		padding: 5px 15px 5px 15px;
+		color: #fff;
+		margin: 0;
+	}
+	
+	.button-reset {
+		/* resize the svg image for reset */
+		transform:scale(0.5); 
+		-webkit-transform:scale(0.5); 
+		-moz-transform:scale(0.5); 
+		-ms-transform:scale(0.5); 
+		-o-transform:scale(0.5);
+		float: right;
+	}
+}
+
+@media screen and (max-width: 297px) {
+	
+	.controls div {
+		width: 100%;
+		margin: 20px 5px 20px 5px;
+	}
+
+	.pomodoro-time, .rest-time {
+		text-align: center;
+	}
+
+
+	button {
+		font-size: 1.2em;
+		padding: 1.5px 10px 1.5px 10px;
+	}
+	
+	p {
+		font-size: 1.2em;
+		margin-bottom: 10px;
+	}
+	span {
+		font-size: 1.2em;	
+		padding: 5px 15px 5px 15px;
+		color: #fff;
+		margin: 0;
+	}
+	
+	.button-reset {
+		/* resize the svg image for reset */
+		transform:scale(0.4); 
+		-webkit-transform:scale(0.4); 
+		-moz-transform:scale(0.4); 
+		-ms-transform:scale(0.4); 
+		-o-transform:scale(0.4);
+		float: right;
+	}
+
+	.time-choosed {
+		font-size: .9em;
+	}
+
+	.social-buttons {
+		font-size: .8em;
+	}
 }
