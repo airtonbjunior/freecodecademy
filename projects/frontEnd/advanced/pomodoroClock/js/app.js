@@ -150,13 +150,13 @@ app.controller('pomodoroController', ['$scope', '$timeout', function($scope, $ti
 	[X] Default values - 25 min pomodoro and 5 minutes rest
 	[X] Sound when a pomodoro/rest finished
 	[ ] Improve the code
-	[ ] Pomodoro quantities
+	[ ] Pomodoro quantities*
 	[X] Include a 0 before a number if < 10
 	[ ] Change the mp3 - doesn't allow publish on internet
 	[X] Don't allow 0 minutes
 	[X] Reset Button
-	[ ] Media queryies for responsiveness
-	[ ] Progress bar
+	[X] Media queryies for responsiveness
+	[X] Progress bar
 
 	* optional
 

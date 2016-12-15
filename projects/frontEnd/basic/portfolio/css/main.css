@@ -1,0 +1,124 @@
+/* My CSS */
+body { padding-top: 70px; }
+
+.main-text {
+  padding: 50px;
+  font-family: 'Cinzel', serif;
+}
+
+.subtitle {
+  font-family: 'Josefin Slab', serif;
+}
+
+.third-text {
+  padding-bottom: 50px; 
+  font-family: 'Josefin Slab', serif;
+}
+
+.section-title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'Cinzel', serif;
+}
+
+.project-title {
+  font-family: 'Josefin Slab', serif;  
+}
+
+.project-description {
+    font-family: 'Josefin Slab', serif;
+
+}
+
+.my-nav-text {
+  font-family: 'Cinzel', serif;
+}
+
+.social-buttom {
+  padding: 10px;
+}
+
+.first-section {
+  background-color: #cdcdc0;
+  margin-bottom: 20px; 
+  padding-bottom: 30px;
+}
+
+.projects-section {
+  background-color: #ddbc95;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.contact-section {
+  background-color: #67D1D5;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.skills-section {
+  background-color: #E9E581;
+  padding-bottom: 30px;  
+  margin-bottom: 20px;
+}
+
+.footer {
+  margin-top: 30px;
+  background-color: #cdcdc0; 
+  font-family: 'Josefin Slab', serif;  
+}
+
+.hr-page {
+  width: 60%;
+}
+
+.row-projects {
+  padding-bottom: 30px;
+}
+
+.btn-social {
+  appearance: button;
+  background: none;
+  color: #000;
+}
+
+.btn-social:hover {
+  color: #fff;
+}
+
+.my-form {
+  margin: 5px;
+  padding: 10px;
+}
+
+.projects-img {
+  border-left: 10px solid;
+}
+
+code {
+  background-color: orange;
+}
+
+.project-division {
+  width: 40%;
+}
+
+.skills-icons {
+  font-size: 10em;
+}
+
+.skill-description {
+  font-family: 'Josefin Slab', serif;
+}
+
+/* footer paragraph */
+@media (max-width: 320px){
+  .footer p {
+    font-size: 5vw;
+  }
+  .subtitle, .third-text{
+    font-size: 5vw;
+  }
+}
+
+/* Third Part CSS */

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Noto+Serif|Playfair+Display|Poiret+One');
+
+
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 5em;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;  
+  padding-bottom: 20px;
+}
+
+p, li {
+  font-family: 'Poiret One', cursive;
+}
+
+ul {
+	list-style-position: inside; /* this isn't necessary on codepen.io ¬¬ */
+}
