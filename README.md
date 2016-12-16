@@ -8,10 +8,10 @@ Most projects are developed in [codepen.io](http://codepen.io/airtonbjunior/) to
   * [#1] [Tribute Page] - [[Specification]](https://www.freecodecamp.com/challenges/build-a-tribute-page) [[Solution codepen]](http://codepen.io/airtonbjunior/full/NAQPJZ/) [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/basic/tributePage/)
   * [#2] [Personal Portfolio] - [[Specification]](https://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage) [[Solution codepen]](http://codepen.io/airtonbjunior/full/pbrgAq/) [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/basic/portfolio/)
 * Intermediate Algorithm Scripting
-  * [#3] [Random Quote Machine] - [[Solution]](http://codepen.io/airtonbjunior/full/jrEjPR/)
-  * [#4] [Local Weather] - [[Solution]](http://codepen.io/airtonbjunior/full/yaYkZo/)
-  * [#5] [Wikipedia Viewer] - [[Solution]](http://codepen.io/airtonbjunior/full/QKyBXY/)
-  * [#6] [Twitchtv API] - [[Solution]](http://codepen.io/airtonbjunior/full/YGqVqR/)
+  * [#3] [Random Quote Machine] - [[Specification]](https://www.freecodecamp.com/challenges/build-a-random-quote-machine) [[Solution codepen]](http://codepen.io/airtonbjunior/full/jrEjPR/) [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/intermediate/quoteMachine/)
+  * [#4] [Local Weather] - [[Specification]](https://www.freecodecamp.com/challenges/show-the-local-weather) [[Solution codepen]](http://codepen.io/airtonbjunior/full/yaYkZo/) [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/intermediate/localWeather/)
+  * [#5] [Wikipedia Viewer] - [[Specification]](https://www.freecodecamp.com/challenges/build-a-wikipedia-viewer) [[Solution codepen]](http://codepen.io/airtonbjunior/full/QKyBXY/) [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/intermediate/wikipediaViewer/)
+  * [#6] [Twitchtv API] - [[Specification]](https://www.freecodecamp.com/challenges/use-the-twitchtv-json-api) [[Solution codepen]](http://codepen.io/airtonbjunior/full/YGqVqR/) [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/intermediate/twitchApi/)
 
 * Advanced Front End Development Projects
  * [#7] [Javascript Calculator] - [[Specification]](https://www.freecodecamp.com/challenges/build-a-javascript-calculator)  [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/advanced/javascriptCalculator/) [[Solution codepen]](http://codepen.io/airtonbjunior/full/mOrVQg/)
