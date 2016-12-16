@@ -1,0 +1,106 @@
+@import 'https://fonts.googleapis.com/css?family=Josefin+Slab';
+
+
+* {
+  box-sizing: border:box;
+  padding: 0; 
+  margin: 0;
+}
+html {
+  background-color: #FDE3A7;
+  position: relative;
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #22313F;
+}
+
+
+li {
+  margin: 10px;
+  padding: 10px;
+  min-height: 50px;
+  color: #22313F;
+  overflow: auto;
+}
+
+.result {
+  min-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+}
+
+.search-box {
+  padding: 20px;  
+  margin: 20px;
+}
+.search-box:focus {
+  border: 1px solid blue;  
+}
+
+.search-box-div {
+  width: 100%;
+  text-align: center;
+}
+
+.stream-list {
+  list-style-type: none;
+  padding: 10px;
+  margin: 10px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.online {
+  background-color: #26A65B;
+}
+
+.offline {
+  background-color: #F22613;
+}
+
+.not-found {
+  background-color: #BFBFBF;
+}
+
+.preview-img {
+  float: left;
+  margin-right: 10px;
+  vertical-align: middle; /* | top | bottom */
+  clear: both;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-family: 'Josefin Slab', serif;
+}
+p {
+  font-size: 0.9em;
+  display: inline-block;
+  vertical-align: middle; /* | top | bottom */
+}
+code {
+  background-color: #000;
+  color: #fff;
+  padding: 2px;
+}
+
+footer {
+  text-align: center;
+  color: #fff;
+  background-color: #763626;
+  font-family: 'Playfair Display', serif;
+  /* position:fixed; */
+  width: 100%;
+  bottom: 0px;
+  width: 100%;
+  position: absolute;
+  font-family: 'Josefin Slab', serif;
+}
+footer a {
+  color: #fff;
+}

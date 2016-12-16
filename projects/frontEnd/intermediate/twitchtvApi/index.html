@@ -1,0 +1,48 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wikipedia Viewer</title>
+</head>
+
+<body>
+<div ng-app="twitch" ng-controller="mainController">
+  <div class="result">
+    <div class="search-box-div">
+      <input ng-model="searchParam" class="search-box" placeholder="filter stream"></input>
+    </div>
+    <ul class="stream-list">
+      <!-- Create the filter of the search (live search) -->
+      <li ng-repeat="channel in channelsOk | filter:searchParam" ng-if="!!channel.data.stream" class="online">
+        <a href="{{ channel.data.stream.channel.url}}" target="_blank">
+          <img src="{{ channel.data.stream.preview.small }}" alt="preview" class="preview-img"></img>
+          <h1> {{ channel.data.name }} </h1>              
+          <code>Online</code>
+          <p> {{ channel.data.stream.game }} | </p> 
+          <p> {{ channel.data.stream.viewers }} Viewers</p>
+        
+        </a>
+      </li>  
+      <li ng-repeat="channel in channelsOk | filter:searchParam" ng-if="!!!channel.data.stream && channel.status == 200" class="offline">
+        <img src="https://placehold.it/80x45?text=:^(" alt="preview" class="preview-img"></img> 
+        <h1> {{ channel.data.name }} </h1>
+        <code>Offline</code>
+      </li> 
+      <li ng-repeat="channel in channelsOk | filter:searchParam" ng-if="channel.status != 200" class="not-found">
+        <img src="http://placehold.it/80x45/ff0000/ffffff&text=not+found" alt="preview" class="preview-img"></img>
+        <h1> {{ channel.data.name }} </h1>
+        <code>Not Found</code>
+      </li> 
+    </ul>
+  </div>
+  <footer>
+    <hr>
+    <p class="text-center">Project part of the FreeCodeCamp Challenge #6: <a href="https://www.freecodecamp.com/challenges/use-the-twitchtv-json-api" target="_blank">Twitchtv JSON API</a></p><br />
+      <p class="text-center">Coded by airtonbjunior [airtonbjunior@gmail.com]</p>
+  </footer>
+</div> 
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+</body>
+</html>
