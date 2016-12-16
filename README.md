@@ -5,8 +5,8 @@ Most projects are developed in [codepen.io](http://codepen.io/airtonbjunior/) to
 
 * Basic Front End Development Projects
 
-  * [#1] [Tribute Page] - [[Solution]](http://codepen.io/airtonbjunior/full/NAQPJZ/)
-  * [#2] [Personal Portfolio] - [[Solution]](http://codepen.io/airtonbjunior/full/pbrgAq/)
+  * [#1] [Tribute Page] - [[Specification]](https://www.freecodecamp.com/challenges/build-a-tribute-page) [[Solution codepen]](http://codepen.io/airtonbjunior/full/NAQPJZ/) [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/basic/tributePage/)
+  * [#2] [Personal Portfolio] - [[Specification]](https://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage) [[Solution codepen]](http://codepen.io/airtonbjunior/full/pbrgAq/) [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/basic/portfolio/)
 * Intermediate Algorithm Scripting
   * [#3] [Random Quote Machine] - [[Solution]](http://codepen.io/airtonbjunior/full/jrEjPR/)
   * [#4] [Local Weather] - [[Solution]](http://codepen.io/airtonbjunior/full/yaYkZo/)
