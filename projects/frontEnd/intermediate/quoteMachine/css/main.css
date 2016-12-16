@@ -1,0 +1,98 @@
+@import 'https://fonts.googleapis.com/css?family=Lobster|Lora|Pacifico|Playfair+Display|Roboto+Slab|Slabo+27px|Josefin+Slab';
+
+/* I've used the reference http://tableless.com.br/centralizando-conteudo-na-vertical-e-horizontal-com-css-flexbox/ */
+*{
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  color: #fff;
+  background-color: #763626;
+}
+
+.wrapper {
+  height: 90%;
+  min-height: 90%;
+
+  /* habilita o flex nos filhos diretos */
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+
+  /* centraliza na vertical */
+  -ms-align-items: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+  /* centraliza na horizontal */
+  -ms-justify-content: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-color: #763626;
+}
+
+.child-wrap {
+  box-sizing: border-box;
+  padding: 40px;
+  border: 1px;
+  word-wrap: break-word;
+  max-width: 50%;
+  max-height: 90%;
+  overflow: auto;
+  background-color: #2a3132;
+}
+
+.social-button {
+  color: #fff;
+  margin: 20px 0px 0px 0px;
+}
+
+.social-button:hover {
+  color: #336b87;
+}
+
+a, .social-button-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+hr {
+  /* width: 50%; */
+}
+.quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2em;
+}
+
+.author {
+  text-align: right;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5em;
+}
+
+
+#new-quote {
+  margin: 20px 0px 0px 0px;
+  padding: 15px;
+  float: right;
+  background-color: #336b87;
+  color: #fff;
+  font-family: 'Roboto Slab', serif;
+  border: 1px solid #34495E;
+}
+#new-quote:hover {
+  border: 1px solid #fff;
+}
+#new-quote:active {
+  color: #E67E22;
+  border: 1px solid green;
+}
+footer {
+  text-align: center;
+  color: #fff;
+  background-color: #763626;
+  font-family: 'Playfair Display', serif;
+}
