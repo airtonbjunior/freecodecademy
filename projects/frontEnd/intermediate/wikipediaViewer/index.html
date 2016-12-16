@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title></title>
+</head>
+
+<body>
+<!-- 
+  TO-DO
+  [x] handle when no data returned [2]
+  [x] Activate "Search" button with enter [b]
+  [x] Responsiviness  
+  [x] styles
+  [] set max results (?)
+-->
+<div ng-app="wikiView" ng-controller="mainController" class="all">
+  <form class="form-search"> <!-- [b] -->
+    <input type="text" ng-model="paramSearch" type="submit" placeholder="search wiki article" required>
+    <button ng-click="search()">Search</button>
+    <button onClick="window.open('https://en.wikipedia.org/wiki/Special:Random', '_blank');">Random</button>
+  </form>
+  <hr>
+  <div class="result">
+    <ul ng-repeat="page in pages" class="main-list">
+      <a href="https://en.wikipedia.org/?curid={{ page.pageid }}" target="_blank">
+        <!-- [a] -->
+        <li>{{ page.title }}</li>
+        <ul class="sublist">
+          <li ng-if="!!page.terms.description[0]">{{ page.terms.description[0] }}</li>
+          <li ng-if="!!!page.terms.description[0]">No description available</li>
+        </ul>
+      </a>
+    </ul>
+    <footer>
+      <p class="text-center">Project part of the FreeCodeCamp Challenge #5: <a href="https://www.freecodecamp.com/challenges/build-a-wikipedia-viewer" target="_blank">Build a Wikipedia Viewer</a></p>
+      <p class="text-center">Coded by airtonbjunior [airtonbjunior@gmail.com]</p></footer>
+  </div>
+</div>
+
+<!-- 
+  References:
+    * [a] - http://stackoverflow.com/a/9793272 - How to access a wikipedia page by pageid
+    * [b] - http://stackoverflow.com/a/155193
+-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+</body>
+</html>
