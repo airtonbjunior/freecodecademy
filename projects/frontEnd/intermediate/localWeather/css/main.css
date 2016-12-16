@@ -1,0 +1,94 @@
+@import 'https://fonts.googleapis.com/css?family=Bree+Serif|Libre+Baskerville|Lobster|Playfair+Display|Poiret+One';
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  color: #fff;
+  
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.wrapper {
+  height: 90%;
+  min-height: 90%;
+
+  /* habilita o flex nos filhos diretos */
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+
+  /* centraliza na vertical */
+  -ms-align-items: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+  /* centraliza na horizontal */
+  -ms-justify-content: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.wrapper > div { /* Only the first div centralized */
+  padding: 40px;
+  border: 0px solid rgba(0, 0, 0, .3); /* Remove border */
+}
+.city-name {
+  font-size: 10vw;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+}
+.temperature {
+  font-size: 8vw;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+
+}
+.weather-icon {
+  margin:0 auto;
+  text-align: center;
+}
+.box {
+  text-align: center;
+}
+.buttons-temp {
+  display: inline-block;
+}
+button {
+  padding: 20px 20px 20px 20px;
+  font-size: 3vw;
+  font-family: 'Playfair Display', serif;
+  
+  background: none;
+  color: #fff;
+  border: 0px solid;
+}
+button.active {
+  background-color: #f0735e;
+  border-bottom: 5px solid blue;
+}
+footer {
+  text-align: center;
+  color: #fff;
+  background-color: #763626;
+  font-family: 'Playfair Display', serif;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:50px;
+  width:100%;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+hr {
+  width: 70%;
+  margin: 0 auto;
+}
