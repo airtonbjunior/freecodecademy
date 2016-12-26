@@ -6,9 +6,9 @@ code {
   background-color: orange;
 }
 
-a, a:hover, a:link, a:active{
+a, a:hover {
   text-decoration: none;
-  color: inherit;
+  color: #000;
 }
 
 .main-text {
