@@ -1,5 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Josefin+Slab');
 /* My CSS */
 body { padding-top: 70px; }
+
+code {
+  background-color: orange;
+}
+
+a, a:hover, a:link, a:active{
+  text-decoration: none;
+  color: inherit;
+}
 
 .main-text {
   padding: 50px;
@@ -93,10 +103,6 @@ body { padding-top: 70px; }
 
 .projects-img {
   border-left: 10px solid;
-}
-
-code {
-  background-color: orange;
 }
 
 .project-division {
