@@ -1,0 +1,28 @@
+/* Simple CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+/* Simple CSS Reset */
+
+div > span {
+	padding: 20px;
+	margin: 20px;
+	display: inline-block;
+}
+
+
+.wrapper {
+	/* Centralize the main wrapper vertically and horizontally */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* Centralize the main wrapper vertically and horizontally */
+}
+
