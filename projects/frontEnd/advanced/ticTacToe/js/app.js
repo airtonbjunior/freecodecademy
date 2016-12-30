@@ -8,14 +8,15 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 	$scope.charTurn = $scope.myChoose; // The user always start the game. Change this if want change
 	/* Default values */
 
-
+	$scope.cellsFill = 1;
 
 
 	/* Function setChar - set the char on the cell */
 	$scope.setChar = function (event) {
-    	var element = event.currentTarget;
     	
-    	console.log(element.firstChild.nodeValue.length);
+		console.log($scope.cellsFill);
+
+    	var element = event.currentTarget;
 
     	// Ugly solution, improve this :/
     	if(element.firstChild.nodeValue === 'X' || element.firstChild.nodeValue === 'O') { alert("already have a element"); return; }
@@ -24,6 +25,9 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 
     	if ($scope.charTurn == 'X') { $scope.charTurn = 'O'; } else { $scope.charTurn = 'X'; }
 
+    	/* if 9 cells are filled, the game don't finished (think about it better) */
+    	if($scope.cellsFill < 9) { $scope.cellsFill++; } else { restartGame(); return; }
+
 	}
 
 
@@ -31,6 +35,22 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 	$scope.chooseChar = function (char) {
 		$scope.myChoose = $scope.charTurn = char;
 		document.getElementById('modal').style.display = "none";
+	}
+
+
+	/* Improve this (OMG, it's a shame :()*/
+	function restartGame () {
+		document.getElementById('r1c1').innerHTML = '&nbsp;&nbsp;&nbsp;';
+		document.getElementById('r1c2').innerHTML = '&nbsp;&nbsp;&nbsp;';
+		document.getElementById('r1c3').innerHTML = '&nbsp;&nbsp;&nbsp;';
+		document.getElementById('r2c1').innerHTML = '&nbsp;&nbsp;&nbsp;';
+		document.getElementById('r2c2').innerHTML = '&nbsp;&nbsp;&nbsp;';
+		document.getElementById('r2c3').innerHTML = '&nbsp;&nbsp;&nbsp;';
+		document.getElementById('r3c1').innerHTML = '&nbsp;&nbsp;&nbsp;';
+		document.getElementById('r3c2').innerHTML = '&nbsp;&nbsp;&nbsp;';
+		document.getElementById('r3c3').innerHTML = '&nbsp;&nbsp;&nbsp;';
+
+		$scope.cellsFill = 1;
 	}
 
 }]);
