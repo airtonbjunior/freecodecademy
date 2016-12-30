@@ -11,9 +11,10 @@
 /* Simple CSS Reset */
 
 div > span {
-	padding: 20px;
-	margin: 20px;
+	padding: 40px;
 	display: inline-block;
+
+	border-bottom: 1px solid;
 
 	text-align: center;
 }
@@ -22,6 +23,15 @@ div > span:active {
 	background-color: yellow;
 }
 
+div > span:nth-child(2) {
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-bottom: 1px solid;
+}
+
+.row-3 > span:nth-child(2), .row-3 > span {
+	border-bottom: none;
+}
 
 .wrapper {
 	/* Centralize the main wrapper vertically and horizontally */
