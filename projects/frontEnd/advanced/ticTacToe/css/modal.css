@@ -2,8 +2,8 @@
 
 /* CSS var */
 :root {
-	--main-background: #999;
-
+	--main-background: #99b898;
+	--button-color: #2a363b;
 }
 
 .modal {
@@ -43,4 +43,18 @@
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
     to {top: 0; opacity: 1}
+}
+
+.modal p {
+	margin: 20px;
+	color: #2a363b;
+}
+
+button {
+	padding: 20px;
+	background: var(--button-color);
+	border: 0px;
+	margin-bottom: 20px;
+	color: #fff;
+
 }
