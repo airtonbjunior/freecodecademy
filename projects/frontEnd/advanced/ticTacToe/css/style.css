@@ -10,13 +10,28 @@
 }
 /* Simple CSS Reset */
 
+
+/* var CSS */ 
+:root {
+	/* Color Scheme [3] */
+	--page-background: #2a363b; 
+	--tic-tac-toe-color: #feceab;
+	--chars-color: #feceab;
+}
+
+body {
+	background-color: var(--page-background);
+}
+
+
 div > span {
 	padding: 40px;
 	display: inline-block;
 
-	border-bottom: 1px solid;
+	border-bottom: 1px solid var(--tic-tac-toe-color);
 
 	text-align: center;
+	color: var(--chars-color);
 }
 
 div > span:active {
@@ -25,9 +40,9 @@ div > span:active {
 
 
 div > span:nth-child(2) {
-	border-left: 1px solid;
-	border-right: 1px solid;
-	border-bottom: 1px solid;
+	border-left: 1px solid var(--tic-tac-toe-color);
+	border-right: 1px solid var(--tic-tac-toe-color);
+	border-bottom: 1px solid var(--tic-tac-toe-color);
 }
 
 .row-3 > span:nth-child(2), .row-3 > span {
@@ -42,5 +57,3 @@ div > span:nth-child(2) {
 	transform: translate(-50%, -50%);
 	/* Centralize the main wrapper vertically and horizontally */
 }
-
-

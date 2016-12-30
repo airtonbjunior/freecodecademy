@@ -78,5 +78,6 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 
 	[1] http://stackoverflow.com/a/14720819
 	[2] http://www.w3schools.com/howto/howto_css_modals.asp
+	[3] http://digitalsynopsis.com/design/minimal-web-color-palettes-combination-hex-code/
 
 */
