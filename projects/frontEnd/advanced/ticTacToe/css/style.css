@@ -23,6 +23,7 @@ div > span:active {
 	background-color: yellow;
 }
 
+
 div > span:nth-child(2) {
 	border-left: 1px solid;
 	border-right: 1px solid;
