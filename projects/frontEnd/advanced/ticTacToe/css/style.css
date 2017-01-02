@@ -128,3 +128,17 @@ div > span:nth-child(2) {
 	}
 
 }
+
+@media screen and (max-width: 211px) {
+	
+	div > span {
+		padding: 5px;
+		display: inline-block;
+
+		border-bottom: 1px solid var(--tic-tac-toe-color);
+
+		text-align: center;
+		color: var(--chars-color);
+	}
+
+}
