@@ -14,7 +14,7 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 	/* Function setChar - set the char on the cell */
 	$scope.setChar = function (event) {
 
-		if(event.currentTarget.firstChild.nodeValue === 'X' || event.currentTarget.firstChild.nodeValue === 'O') { alert("already have a element"); return; }
+		if(event.currentTarget.firstChild.nodeValue === 'X' || event.currentTarget.firstChild.nodeValue === 'O') { alert("already have an element"); return; }
 
 		event.currentTarget.firstChild.nodeValue = $scope.charTurn; //[1]
 
@@ -57,29 +57,20 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 	}
 
 
+	/* Verify if the game ends */ 
 	function endGame() {
-		var gamePositions = getAllPositions();
-		var char = "";
-
-		for(var i = 0; i < 9; i++) {
-			if(gamePositions[i] === "X" || gamePositions[i] === "O") {
-				char = gamePositions[i];
-				// Arithmetic Progression to verify if the game are over
-				
-				/* there's an error here. I need to verify if the number less the offset also is true. */
-
-				if(	
-					(gamePositions[i+1] === char && gamePositions[i+1+1] === char) ||
-					(gamePositions[i+3] === char && gamePositions[i+3+3] === char) ||
-					(gamePositions[i+4] === char && gamePositions[i+4+4] === char)
-				) 
-					{ 
-						alert(char + " win the game");
-						return true;
-					}
-
-			}
-
+		
+		if(	(document.getElementById('r1c1').innerHTML === $scope.charTurn) && (document.getElementById('r1c2').innerHTML === $scope.charTurn) && (document.getElementById('r1c3').innerHTML === $scope.charTurn) ||
+			(document.getElementById('r2c1').innerHTML === $scope.charTurn) && (document.getElementById('r2c2').innerHTML === $scope.charTurn) && (document.getElementById('r2c3').innerHTML === $scope.charTurn) ||
+			(document.getElementById('r3c1').innerHTML === $scope.charTurn) && (document.getElementById('r3c2').innerHTML === $scope.charTurn) && (document.getElementById('r3c3').innerHTML === $scope.charTurn) ||
+			(document.getElementById('r1c1').innerHTML === $scope.charTurn) && (document.getElementById('r2c1').innerHTML === $scope.charTurn) && (document.getElementById('r3c1').innerHTML === $scope.charTurn) ||
+			(document.getElementById('r1c2').innerHTML === $scope.charTurn) && (document.getElementById('r2c2').innerHTML === $scope.charTurn) && (document.getElementById('r3c2').innerHTML === $scope.charTurn) ||
+			(document.getElementById('r1c3').innerHTML === $scope.charTurn) && (document.getElementById('r2c3').innerHTML === $scope.charTurn) && (document.getElementById('r3c3').innerHTML === $scope.charTurn) ||
+			(document.getElementById('r1c1').innerHTML === $scope.charTurn) && (document.getElementById('r2c2').innerHTML === $scope.charTurn) && (document.getElementById('r3c3').innerHTML === $scope.charTurn) ||
+			(document.getElementById('r1c3').innerHTML === $scope.charTurn) && (document.getElementById('r2c2').innerHTML === $scope.charTurn) && (document.getElementById('r3c1').innerHTML === $scope.charTurn)
+		) {
+			alert($scope.charTurn + " wins!");
+			return true;
 		}
 
 		return false;
