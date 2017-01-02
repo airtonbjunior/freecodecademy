@@ -32,7 +32,7 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
     	if($scope.cellsFill > 4) { 
     		if(endGame()) {
     			// put the actions when someone wins the game
-    			// restartGame();
+    			restartGame();
     			return;
     		}
     	}
