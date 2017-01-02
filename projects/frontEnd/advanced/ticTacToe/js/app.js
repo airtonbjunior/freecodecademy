@@ -159,9 +159,10 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 	[X] Modal (i think the best solution is modal, see this) to choose 'X' or 'O'
 	[X] Show the char when clicks on the cell
 	[ ] Game Over (TIE)
-	[ ] Game Win
+	[X] Game Win
 	[ ] Change color when win
 	[ ] Remove 3 space codes when system start
+	[ ] 'Inteligence' of computer game
 	[ ] Undo*
 
 

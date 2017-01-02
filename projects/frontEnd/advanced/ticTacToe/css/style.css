@@ -57,3 +57,74 @@ div > span:nth-child(2) {
 	transform: translate(-50%, -50%);
 	/* Centralize the main wrapper vertically and horizontally */
 }
+
+
+@media screen and (max-width: 571px) {
+	
+	div > span {
+		padding: 30px;
+		display: inline-block;
+
+		border-bottom: 1px solid var(--tic-tac-toe-color);
+
+		text-align: center;
+		color: var(--chars-color);
+	}
+
+}
+
+@media screen and (max-width: 451px) {
+	
+	div > span {
+		padding: 25px;
+		display: inline-block;
+
+		border-bottom: 1px solid var(--tic-tac-toe-color);
+
+		text-align: center;
+		color: var(--chars-color);
+	}
+
+}
+
+@media screen and (max-width: 391px) {
+	
+	div > span {
+		padding: 20px;
+		display: inline-block;
+
+		border-bottom: 1px solid var(--tic-tac-toe-color);
+
+		text-align: center;
+		color: var(--chars-color);
+	}
+
+}
+
+@media screen and (max-width: 331px) {
+	
+	div > span {
+		padding: 15px;
+		display: inline-block;
+
+		border-bottom: 1px solid var(--tic-tac-toe-color);
+
+		text-align: center;
+		color: var(--chars-color);
+	}
+
+}
+
+@media screen and (max-width: 271px) {
+	
+	div > span {
+		padding: 10px;
+		display: inline-block;
+
+		border-bottom: 1px solid var(--tic-tac-toe-color);
+
+		text-align: center;
+		color: var(--chars-color);
+	}
+
+}
