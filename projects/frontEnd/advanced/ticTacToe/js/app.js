@@ -145,7 +145,7 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 /*
 	TO-DO List
 
-	[X] Modal (i think the best solution is modal, see this) to choose 'X' or '0'
+	[X] Modal (i think the best solution is modal, see this) to choose 'X' or 'O'
 	[X] Show the char when clicks on the cell
 	[ ] Game Over (TIE)
 	[ ] Game Win
