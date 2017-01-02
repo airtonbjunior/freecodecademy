@@ -35,6 +35,17 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
     			restartGame();
     			return;
     		}
+    		else {
+    			invertChar();
+    			// create a function that make the things when the game finish
+    			if(endGame()) {
+    				restartGame();
+    				return;
+    			}
+    			else {
+    				invertChar(); // invert the char again to continue the game
+    			}
+    		}
     	}
 
     	/* if 9 cells are filled, the game don't finished [TIE] (think about it better) */
