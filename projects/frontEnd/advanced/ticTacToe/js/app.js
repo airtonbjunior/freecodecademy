@@ -4,7 +4,7 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 
 	/* Default values, case the user close the modal forced (there isn't a close button) */
 	$scope.myChoose = "X";
-	$scope.pcChoose = "Y";
+	$scope.pcChoose = "O";
 	$scope.charTurn = $scope.myChoose; // The user always start the game. Change this if want change
 	/* Default values */
 
@@ -23,7 +23,13 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
     	/* COMPUTER TURN GOES HERE */
 		var emptyPositions = getAllEmptyPositions();
 		if($scope.cellsFill < 9) {
-			putChar($scope.charTurn, emptyPositions[0]); // I'm always returning the first position empty. Improve this with a 'inteligent' logic
+			if(positionsWarning() == 0) { // if 0, there's no position warning yet
+				putChar($scope.charTurn, emptyPositions[0]); // I'm always returning the first position empty. Improve this with a 'inteligent' logic
+			}	
+			else {
+				alert('USER IS ALMOST THE WINNER! There is positions warning on ' + positionsWarning());
+				putChar($scope.charTurn, positionsWarning());
+			}
 			invertChar();
 		}
 		/* COMPUTER TURN GOES HERE */
@@ -51,6 +57,8 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
     	/* if 9 cells are filled, the game don't finished [TIE] (think about it better) */
     	if($scope.cellsFill < 9) { $scope.cellsFill++; } else { restartGame(); return; }
 
+    	
+
 	}
 
 
@@ -62,8 +70,9 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 
 
 	/* Function chooseChar - choose the char of the user - use on the modal screen */
-	$scope.chooseChar = function (char) {
+	$scope.chooseChar = function (char, computerChar) {
 		$scope.myChoose = $scope.charTurn = char;
+		$scope.pcChoose = computerChar;
 		document.getElementById('modal').style.display = "none";
 	}
 
@@ -85,6 +94,83 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 		}
 
 		return false;
+	}
+
+
+	/* Return the positions that are in warning and need to be defended */
+	function positionsWarning() {
+		var chars = [];
+		var position = 0;
+		for (var i = 1; i <= 3; i++) {
+			chars = getCharsOfARow(i);
+			if(numberOfEnemyChar(chars) == 2 && numberOfBlankCells(chars) == 1) {
+				return blankCellPosition('row', i);
+			}
+			chars = getCharsOfAColumn(i);
+			if(numberOfEnemyChar(chars) == 2 && numberOfBlankCells(chars) == 1) {
+				return blankCellPosition('col', i);
+			}
+		}
+
+		return position;
+	}
+
+	
+	/*
+ 	* Return the Blank positions of a type (row, col)
+ 	* Type: row OR col
+	*/
+	function blankCellPosition(type, index) {
+		if(type == 'row') {
+			for (var i = 1; i <= 3; i++) {
+				if(document.getElementById('r' + index + 'c' + i).innerHTML != 'X' && document.getElementById('r' + index + 'c' + i).innerHTML != 'O')
+					return 'r' + index + 'c' + i;
+			}
+		}
+		else { // column
+			for (var i = 1; i <= 3; i++) {
+				if(document.getElementById('r' + i + 'c' + index).innerHTML != 'X' && document.getElementById('r' + i + 'c' + index).innerHTML != 'O')
+					return 'r' + i + 'c' + index;
+			}
+		}
+	}
+
+	/* Count a number of chars enemy, based on a char array */
+	function numberOfBlankCells(chars) {
+		var count = chars.reduce(function(n, val){
+			return n + (val === "&nbsp;&nbsp;&nbsp;") // see this
+		}, 0);
+		return count;
+	}
+
+
+	/* Count a number of chars enemy, based on a char array */
+	function numberOfEnemyChar(chars) {
+		var count = chars.reduce(function(n, val){
+			return n + (val === $scope.myChoose)
+		}, 0);
+		return count;
+	}
+
+
+	/* Get the Chars of a row */ 
+	function getCharsOfARow(row) {
+		var chars = [];
+		chars[1] = document.getElementById('r' + row + 'c1').innerHTML;
+		chars[2] = document.getElementById('r' + row + 'c2').innerHTML;
+		chars[3] = document.getElementById('r' + row + 'c3').innerHTML;
+		
+		return chars;
+	}
+
+	/* Get the Chars of a column */ 
+	function getCharsOfAColumn(col) {
+		var chars = [];
+		chars[1] = document.getElementById('r1c' + col).innerHTML;
+		chars[2] = document.getElementById('r2c' + col).innerHTML;
+		chars[3] = document.getElementById('r3c' + col).innerHTML;
+		
+		return chars;
 	}
 
 
@@ -158,10 +244,11 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 
 	[X] Modal (i think the best solution is modal, see this) to choose 'X' or 'O'
 	[X] Show the char when clicks on the cell
-	[ ] Game Over (TIE)
+	[X] Game Over (TIE)
 	[X] Game Win
 	[ ] Change color when win
 	[ ] Remove 3 space codes when system start
+	[ ] Span are 'breaking' when the char are put in
 	[ ] 'Inteligence' of computer game
 	[ ] Undo*
 
