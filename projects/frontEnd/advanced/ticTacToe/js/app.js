@@ -40,13 +40,11 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
     	/* if the number of cells is less of four, it's impossible something win the ticTacToe. So, I start the verification only when cellsFill is greater than 4 */
     	if($scope.cellsFill > 4) { 
     		if(endGame()) {
-    			// put the actions when someone wins the game
     			//restartGame();
     			return;
     		}
     		else {
     			invertChar();
-    			// create a function that make the things when the game finish
     			if(endGame()) {
     				//restartGame();
     				return;
@@ -58,7 +56,14 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
     	}
 
     	/* if 9 cells are filled, the game don't finished [TIE] (think about it better) */
-    	if($scope.cellsFill < 9) { $scope.cellsFill++; } else { restartGame(); return; }
+    	if($scope.cellsFill < 9) { 
+    		$scope.cellsFill++; 
+    	} 
+    	else { 
+    		$scope.messageModal = "TIE"; 
+    		document.getElementById('modal-end-game').style.display = "block"; // Show the modal (the modal has a close button)
+    		return; 
+    	}
 	}
 
 
@@ -288,6 +293,7 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 	/* Restart the game - function called by the modal */
 	$scope.restartGameModal = function() {
 		document.getElementById('modal-end-game').style.display = "none";
+		$scope.messageModal = "";
 		restartGame();
 	}
 
