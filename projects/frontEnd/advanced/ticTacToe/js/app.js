@@ -8,6 +8,7 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 	$scope.charTurn = $scope.myChoose; // The user always start the game. Change this if want change
 	/* Default values */
 
+	$scope.messageModal = "";
 	$scope.cellsFill = 1;
 
 
@@ -28,7 +29,7 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 				putChar($scope.charTurn, emptyPositions[0]); // I'm always returning the first position empty. Improve this with a 'inteligent' logic
 			}	
 			else {
-				alert('USER IS ALMOST THE WINNER! There is positions warning on ' + positionsWarning());
+				// alert('USER IS ALMOST THE WINNER! There is positions warning on ' + positionsWarning());
 				putChar($scope.charTurn, positionsWarning());
 			}
 			invertChar();
@@ -40,14 +41,14 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
     	if($scope.cellsFill > 4) { 
     		if(endGame()) {
     			// put the actions when someone wins the game
-    			restartGame();
+    			//restartGame();
     			return;
     		}
     		else {
     			invertChar();
     			// create a function that make the things when the game finish
     			if(endGame()) {
-    				restartGame();
+    				//restartGame();
     				return;
     			}
     			else {
@@ -88,7 +89,9 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 			(document.getElementById('r1c1').innerHTML === $scope.charTurn) && (document.getElementById('r2c2').innerHTML === $scope.charTurn) && (document.getElementById('r3c3').innerHTML === $scope.charTurn) ||
 			(document.getElementById('r1c3').innerHTML === $scope.charTurn) && (document.getElementById('r2c2').innerHTML === $scope.charTurn) && (document.getElementById('r3c1').innerHTML === $scope.charTurn)
 		) {
-			alert($scope.charTurn + " wins!");
+			var message = $scope.charTurn + " wins!";
+			$scope.messageModal = message;
+			document.getElementById('modal-end-game').style.display = "block"; // Show the modal (the modal has a close button)
 			return true;
 		}
 
@@ -255,7 +258,7 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 			} //j
 			offset += 2;
 		} //i
-		console.log(arrayEmptyPositions);
+		//console.log(arrayEmptyPositions);
 		return arrayEmptyPositions;
 	}
 
@@ -267,7 +270,7 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 
 	/* Improve this (OMG, it's a shame :()*/
 	function restartGame () {
-		alert("Restart the game!");
+		//alert("Restart the game!");
 
 		document.getElementById('r1c1').innerHTML = '&nbsp;&nbsp;&nbsp;';
 		document.getElementById('r1c2').innerHTML = '&nbsp;&nbsp;&nbsp;';
@@ -280,6 +283,12 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 		document.getElementById('r3c3').innerHTML = '&nbsp;&nbsp;&nbsp;';
 
 		$scope.cellsFill = 1;
+	}
+
+	/* Restart the game - function called by the modal */
+	$scope.restartGameModal = function() {
+		document.getElementById('modal-end-game').style.display = "none";
+		restartGame();
 	}
 
 }]);
@@ -297,7 +306,7 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 	[ ] Change color when win
 	[ ] Remove 3 space codes when system start
 	[ ] Span are 'breaking' when the char are put in
-	[ ] 'Inteligence' of computer game
+	[X] 'Inteligence' of computer game
 	[ ] Undo*
 
 
