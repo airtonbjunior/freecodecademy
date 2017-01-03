@@ -37,23 +37,18 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 		/* COMPUTER TURN GOES HERE */
 
 
-    	/* if the number of cells is less of four, it's impossible something win the ticTacToe. So, I start the verification only when cellsFill is greater than 4 */
-    	if($scope.cellsFill > 4) { 
-    		if(endGame()) {
-    			//restartGame();
-    			return;
-    		}
-    		else {
-    			invertChar();
-    			if(endGame()) {
-    				//restartGame();
-    				return;
-    			}
-    			else {
-    				invertChar(); // invert the char again to continue the game
-    			}
-    		}
-    	}
+   		if(endGame()) {
+   			return;
+   		}
+   		else {
+   			invertChar();
+   			if(endGame()) {
+   				return;
+   			}
+   			else {
+   				invertChar(); // invert the char again to continue the game
+   			}
+   		}
 
     	/* if 9 cells are filled, the game don't finished [TIE] (think about it better) */
     	if($scope.cellsFill < 9) { 
