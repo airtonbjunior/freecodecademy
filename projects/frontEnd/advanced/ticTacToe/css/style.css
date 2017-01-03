@@ -45,6 +45,11 @@ div > span:nth-child(2) {
 	border-bottom: 1px solid var(--tic-tac-toe-color);
 }
 
+a {
+	text-decoration: none;
+	color: var(--tic-tac-toe-color);
+}
+
 .row-3 > span:nth-child(2), .row-3 > span {
 	border-bottom: none;
 }
@@ -58,6 +63,19 @@ div > span:nth-child(2) {
 	/* Centralize the main wrapper vertically and horizontally */
 }
 
+.social-buttons {
+	margin-top: 80px;
+	text-align: center;
+}
+.social-buttons > a:hover {
+	color: yellow;
+}
+.social-buttons > a {
+	margin-right: 10px;
+}
+.social-buttons > a:last-child { /* remove the margin of the last */
+	margin-right: 0px; /* sometimes, I can remove a margin left from the first with :first-child too*/
+}
 
 @media screen and (max-width: 571px) {
 	
@@ -99,6 +117,9 @@ div > span:nth-child(2) {
 		color: var(--chars-color);
 	}
 
+	.social-buttons {
+		font-size: .9em;
+	}
 }
 
 @media screen and (max-width: 331px) {
@@ -113,6 +134,9 @@ div > span:nth-child(2) {
 		color: var(--chars-color);
 	}
 
+	.social-buttons {
+		font-size: .7em;
+	}
 }
 
 @media screen and (max-width: 271px) {
@@ -126,7 +150,9 @@ div > span:nth-child(2) {
 		text-align: center;
 		color: var(--chars-color);
 	}
-
+	.social-buttons {
+		font-size: .5em;
+	}
 }
 
 @media screen and (max-width: 211px) {
@@ -140,5 +166,4 @@ div > span:nth-child(2) {
 		text-align: center;
 		color: var(--chars-color);
 	}
-
 }
