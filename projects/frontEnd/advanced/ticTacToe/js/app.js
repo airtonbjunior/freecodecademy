@@ -20,6 +20,7 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 
 		invertChar();
     
+
     	/* COMPUTER TURN GOES HERE */
 		var emptyPositions = getAllEmptyPositions();
 		if($scope.cellsFill < 9) {
@@ -33,6 +34,7 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 			invertChar();
 		}
 		/* COMPUTER TURN GOES HERE */
+
 
     	/* if the number of cells is less of four, it's impossible something win the ticTacToe. So, I start the verification only when cellsFill is greater than 4 */
     	if($scope.cellsFill > 4) { 
@@ -56,9 +58,6 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 
     	/* if 9 cells are filled, the game don't finished [TIE] (think about it better) */
     	if($scope.cellsFill < 9) { $scope.cellsFill++; } else { restartGame(); return; }
-
-    	
-
 	}
 
 
@@ -110,15 +109,21 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 			if(numberOfEnemyChar(chars) == 2 && numberOfBlankCells(chars) == 1) {
 				return blankCellPosition('col', i);
 			}
-		}
 
+			if(i < 3) { // there are only 2 diagonals
+				chars = getCharsOfADiagonal(i);
+				if(numberOfEnemyChar(chars) == 2 && numberOfBlankCells(chars) == 1) {
+					return blankCellPosition('diagonal', i);
+				}
+			}
+		}
 		return position;
 	}
 
 	
 	/*
- 	* Return the Blank positions of a type (row, col)
- 	* Type: row OR col
+ 	* Return the Blank positions of a type (row, col, diagonal)
+ 	* Type: row OR col OR diagonal
 	*/
 	function blankCellPosition(type, index) {
 		if(type == 'row') {
@@ -127,11 +132,38 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 					return 'r' + index + 'c' + i;
 			}
 		}
-		else { // column
+		else if(type == 'col') { 
 			for (var i = 1; i <= 3; i++) {
 				if(document.getElementById('r' + i + 'c' + index).innerHTML != 'X' && document.getElementById('r' + i + 'c' + index).innerHTML != 'O')
 					return 'r' + i + 'c' + index;
 			}
+		}
+		else { //diagonal
+			
+			// central element
+			if(document.getElementById('r2c2').innerHTML != 'X' && document.getElementById('r2c2').innerHTML != 'O') {
+				return 'r2c2';
+			}
+			else {
+				// 1 -> left-rigth diagonal
+				if(index == 1) {
+					if(document.getElementById('r1c1').innerHTML != 'X' && document.getElementById('r1c1').innerHTML != 'O') {
+						return 'r1c1';
+					}
+					else {
+						if(document.getElementById('r3c3').innerHTML != 'X' && document.getElementById('r3c3').innerHTML != 'O') 
+							return 'r3c3';
+					}
+				}
+				else {
+					if(document.getElementById('r1c3').innerHTML != 'X' && document.getElementById('r1c3').innerHTML != 'O')
+						return 'r1c3';
+					else
+						if(document.getElementById('r3c1').innerHTML != 'X' && document.getElementById('r3c1').innerHTML != 'O')
+							return 'r3c1';
+				}
+			}
+
 		}
 	}
 
@@ -170,6 +202,22 @@ app.controller('ticTacToeController', ['$scope', function($scope) {
 		chars[2] = document.getElementById('r2c' + col).innerHTML;
 		chars[3] = document.getElementById('r3c' + col).innerHTML;
 		
+		return chars;
+	}
+
+	/* Diagonal: 1 left-right | 2 right-left */
+	function getCharsOfADiagonal(diagonal) {
+		var chars = [];
+		chars[2] = document.getElementById('r2c2').innerHTML;
+
+		if(diagonal == 1) {
+			chars[1] = document.getElementById('r1c1').innerHTML;
+			chars[3] = document.getElementById('r3c3').innerHTML;
+		}
+		else {
+			chars[1] = document.getElementById('r1c3').innerHTML;
+			chars[3] = document.getElementById('r3c1').innerHTML;
+		}
 		return chars;
 	}
 
