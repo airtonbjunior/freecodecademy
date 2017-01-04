@@ -19,7 +19,7 @@ app.controller('simonController', ['$scope', '$timeout', '$interval', function($
 	function printPatternButtons () {
 	    intervalId = $interval(function() {
 	        console.log("pass on interval");
-	        document.getElementById('g').style.border = "5px dotted black";
+	        document.getElementById('g').style.backgroundColor = "black";
 	        $scope.counter++; // i'm only testing
 	    }, 1000);
 	};
@@ -33,7 +33,7 @@ app.controller('simonController', ['$scope', '$timeout', '$interval', function($
 	$scope.$watch('counter', function(counter){
     	if (counter > 2){
         	stop();
-        	document.getElementById('g').style.border = "5px solid white";
+        	document.getElementById('g').style.backgroundColor = "green";
     	}
   	});
 
