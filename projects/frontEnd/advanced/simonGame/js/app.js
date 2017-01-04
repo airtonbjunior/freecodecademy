@@ -6,21 +6,21 @@ app.controller('simonController', ['$scope', '$timeout', '$interval', function($
 
 	var colors = ['g', 'r', 'y', 'b'];
 	
-	$scope.turns = ['g', 'g', 'b'];
-	
+	$scope.turns = ['g', 'y', 'b']; // Test
+
+	$scope.turnQuantity = $scope.turns.lenght; // don't get the size - fix this
+	$scope.index = 0;
 
 	printPatternButtons();
 
-	
-
-
-
 	/* Show the pattern to the user through the buttons */
 	function printPatternButtons () {
-	    intervalId = $interval(function() {
+	    intervalId = $interval(function() { // [3]
 	        console.log("pass on interval");
-	        document.getElementById('g').style.backgroundColor = "black";
-	        $scope.counter++; // i'm only testing
+
+	        document.getElementById($scope.turns[$scope.index]).style.backgroundColor = "black";
+	        
+	        $scope.index++; // i'm only testing
 	    }, 1000);
 	};
 
@@ -30,10 +30,12 @@ app.controller('simonController', ['$scope', '$timeout', '$interval', function($
 	};
 
 
-	$scope.$watch('counter', function(counter){
-    	if (counter > 2){
+	$scope.$watch('index', function(index){
+		alert($scope.turnQuantity);
+    	//if (index == $scope.turnQuantity){
+    	if (index == 3){ // hardcoded
         	stop();
-        	document.getElementById('g').style.backgroundColor = "green";
+        	//document.getElementById('g').style.backgroundColor = "green";
     	}
   	});
 
@@ -61,6 +63,8 @@ app.controller('simonController', ['$scope', '$timeout', '$interval', function($
 
 	[1]: http://stackoverflow.com/questions/19886843/how-to-remove-outline-border-from-input-button 
 	[2]: http://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style
+	[3]: http://stackoverflow.com/a/35090614
+
 
 	TO-DO:
 
