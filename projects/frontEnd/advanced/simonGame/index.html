@@ -4,26 +4,36 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Simon Game</title>
 </head>
-<body>
+<body ng-app="simon" ng-controller="simonController">
 	<div class="simon-wrapper">
+		<div class="simon-control-panel">
+			<h1>Simon</h1>
+			<div><p>{{ counter }}</p></div>
+			<button>Start</button>
+			<button>Strict</button>
+			<button>On/Off Button</button>
+		</div>
 		<div class="buttons-row-1">
 			<div class="button-simon button-1 green">
-				<button></button>
+				<button id="g" ng-click="buttonClicked('g');"></button>
 			</div>
 			<div class="button-simon button-2 red">
-				<button></button>
+				<button id="r" ng-click="buttonClicked('r');"></button>
 			</div>
 		</div>
 		<div class="buttons-row-2">
 			<div class="button-simon button-3 yellow">
-				<button></button>
+				<button id="y" ng-click="buttonClicked('y');"></button>
 			</div>
 			<div class="button-simon button-4 blue">
-				<button></button>
+				<button id="b" ng-click="buttonClicked('b');"></button>
 			</div>
 		</div>
 	</div>
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
