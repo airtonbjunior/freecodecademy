@@ -1,0 +1,60 @@
+/* Simple CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/* var CSS */ 
+:root {
+	--yellow-button: #2a363b; 
+	--green-button: #feceab;
+	--red-button: #a23ef2;
+	--blue-button: #ffaa52;
+}
+
+.simon-wrapper {
+	/* Centralize the main wrapper vertically and horizontally */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* Centralize the main wrapper vertically and horizontally */
+
+	display: inline-block;
+	float: left;
+}
+
+.simon-wrapper div {
+	display: inline-block;
+}
+
+.button-simon button {
+	width: 100px;
+	height: 100px;	
+}
+
+/* The class chain is made for didact reasons :) */
+.button-simon.button-1.green button {
+	border-top-left-radius: 100%;
+	background-color: var(--green-button);
+}
+
+.button-simon.button-2.red button{
+	border-top-right-radius: 100%;
+	background-color: var(--red-button);
+}
+
+.button-simon.button-3.yellow button{
+	border-bottom-left-radius: 100%;
+	background-color: var(--yellow-button);
+}
+
+.button-simon.button-4.blue button{
+	border-bottom-right-radius: 100%;
+	background-color: var(--blue-button);
+}
