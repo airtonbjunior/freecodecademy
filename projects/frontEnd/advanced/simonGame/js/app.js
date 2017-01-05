@@ -4,17 +4,19 @@ app.controller('simonController', ['$scope', '$interval', function($scope, $inte
 	$scope.counter      = 1;  // level
 	$scope.turns        = []; // sequence of the actual turn (the last one)
 	$scope.turnQuantity = 0;
-
+	$scope.index 		= 0;
+	
 	var colors = ['green', 'red', 'yellow', 'blue'];
-	
-	$scope.turns = ['green', 'yellow', 'blue']; // Test
-
-	$scope.turnQuantity = $scope.turns.lenght; // don't get the size - fix this
-	
-	$scope.index = 0;
 
 
+
+	/* Function called when the button are pressed */
 	$scope.startTurn = function() {
+		console.log($scope.turns);
+		console.log($scope.index);
+		console.log($scope.turnQuantity);
+
+		processTurn();
 		printPatternButtons();
 	}
 
@@ -22,43 +24,54 @@ app.controller('simonController', ['$scope', '$interval', function($scope, $inte
 
 	/* Show the pattern to the user through the buttons */
 	function printPatternButtons () {
-	    intervalId = $interval(function() { // [3]
-	        console.log("pass on interval");
+	    $scope.intervalId = $interval(function() { // [3]
 
-	        if($scope.index > 0)
+	        if($scope.index > 0) {
 	        	document.getElementById($scope.turns[$scope.index - 1]).style.backgroundColor = $scope.turns[$scope.index - 1];
+	        }
 
 	        document.getElementById($scope.turns[$scope.index]).style.backgroundColor = "black";
 	        
-	        $scope.index++; // i'm only testing
+	        $scope.index++;
 	    }, 1000);
 	};
 
 
+	/* Called when the colored buttons are pressed */
 	$scope.buttonClicked = function(buttonId) {
 		//alert("button " + buttonId + " clicked");
 	};
 
 
 	$scope.$watch('index', function(index){
-		//alert($scope.turnQuantity);
-    	//if (index == $scope.turnQuantity){
-    	if (index == 3) { // hardcoded
+    	if (index == $scope.turnQuantity) {
+        	if(index > 0) {
+        		document.getElementById($scope.turns[$scope.index - 1]).style.backgroundColor = $scope.turns[$scope.index - 1];
+        	}
         	$scope.index = 0;
+        	console.log("I will stop the interval now!");
         	stop();
     	}
   	});
 
   	function stop () {
-	    $interval.cancel(intervalId);
+	    $interval.cancel($scope.intervalId);
   	};
+
+
 
 	/* Create the sequence of a level (1 to 20) */
 	function processTurn(level) {
-		for(var i = 0; i < level; i++) {
+		if(!!!level) { 
 			$scope.turns.push(chooseColor());
+			$scope.turnQuantity++;
 		}
-
+		else {
+			for(var i = 0; i < level; i++) {
+				$scope.turns.push(chooseColor());
+			}
+			$scope.turnQuantity = $scope.turns.length;
+		}
 	}
 
 
@@ -77,5 +90,5 @@ app.controller('simonController', ['$scope', '$interval', function($scope, $inte
 
 
 	TO-DO:
-
+	[ ]: blink when there're two equal colors in a sequence
 */
