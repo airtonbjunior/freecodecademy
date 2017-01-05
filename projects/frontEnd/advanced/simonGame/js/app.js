@@ -12,12 +12,12 @@ app.controller('simonController', ['$scope', '$interval', function($scope, $inte
 
 	/* Function called when the button are pressed */
 	$scope.startTurn = function() {
-		console.log($scope.turns);
-		console.log($scope.index);
-		console.log($scope.turnQuantity);
-
 		processTurn();
 		printPatternButtons();
+
+		console.log($scope.turns);
+		console.log("$scope.index -> " + $scope.index);
+		console.log("$scope.turnQuantity -> " + $scope.turnQuantity);
 	}
 
 
@@ -30,6 +30,7 @@ app.controller('simonController', ['$scope', '$interval', function($scope, $inte
 	        	document.getElementById($scope.turns[$scope.index - 1]).style.backgroundColor = $scope.turns[$scope.index - 1];
 	        }
 
+	        console.log("I will change the color of the button " + $scope.turns[$scope.index]);
 	        document.getElementById($scope.turns[$scope.index]).style.backgroundColor = "black";
 	        
 	        $scope.index++;
@@ -46,6 +47,7 @@ app.controller('simonController', ['$scope', '$interval', function($scope, $inte
 	$scope.$watch('index', function(index){
     	if (index == $scope.turnQuantity) {
         	if(index > 0) {
+        		console.log("I will back the color original to the button " + $scope.turns[$scope.index - 1]);
         		document.getElementById($scope.turns[$scope.index - 1]).style.backgroundColor = $scope.turns[$scope.index - 1];
         	}
         	$scope.index = 0;
@@ -91,4 +93,5 @@ app.controller('simonController', ['$scope', '$interval', function($scope, $inte
 
 	TO-DO:
 	[ ]: blink when there're two equal colors in a sequence
+	[ ]: deactivate the click buttons when the sequence are showing to the user
 */
