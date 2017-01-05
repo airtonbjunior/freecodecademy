@@ -1,18 +1,24 @@
 var app = angular.module('simon', []);
 
-app.controller('simonController', ['$scope', '$timeout', '$interval', function($scope, $timeout, $interval) {
-	$scope.counter = 1;  // level
-	$scope.turns   = []; // sequence of the actual turn (the last one)
+app.controller('simonController', ['$scope', '$interval', function($scope, $interval) {
+	$scope.counter      = 1;  // level
+	$scope.turns        = []; // sequence of the actual turn (the last one)
+	$scope.turnQuantity = 0;
 
-	var colors	= ['green', 'red', 'yellow', 'blue'];
+	var colors = ['green', 'red', 'yellow', 'blue'];
 	
 	$scope.turns = ['green', 'yellow', 'blue']; // Test
 
 	$scope.turnQuantity = $scope.turns.lenght; // don't get the size - fix this
-	$scope.turnQuantity = 3;
+	
 	$scope.index = 0;
 
-	printPatternButtons();
+
+	$scope.startTurn = function() {
+		printPatternButtons();
+	}
+
+
 
 	/* Show the pattern to the user through the buttons */
 	function printPatternButtons () {
@@ -38,7 +44,7 @@ app.controller('simonController', ['$scope', '$timeout', '$interval', function($
 		//alert($scope.turnQuantity);
     	//if (index == $scope.turnQuantity){
     	if (index == 3) { // hardcoded
-        	//document.getElementById($scope.turns[$scope.index]).style.backgroundColor = $scope.turns[$scope.index];
+        	$scope.index = 0;
         	stop();
     	}
   	});
