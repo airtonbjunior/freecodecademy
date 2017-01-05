@@ -4,11 +4,12 @@ app.controller('simonController', ['$scope', '$timeout', '$interval', function($
 	$scope.counter = 1;  // level
 	$scope.turns   = []; // sequence of the actual turn (the last one)
 
-	var colors = ['g', 'r', 'y', 'b'];
+	var colors	= ['green', 'red', 'yellow', 'blue'];
 	
-	$scope.turns = ['g', 'y', 'b']; // Test
+	$scope.turns = ['green', 'yellow', 'blue']; // Test
 
 	$scope.turnQuantity = $scope.turns.lenght; // don't get the size - fix this
+	$scope.turnQuantity = 3;
 	$scope.index = 0;
 
 	printPatternButtons();
@@ -17,6 +18,9 @@ app.controller('simonController', ['$scope', '$timeout', '$interval', function($
 	function printPatternButtons () {
 	    intervalId = $interval(function() { // [3]
 	        console.log("pass on interval");
+
+	        if($scope.index > 0)
+	        	document.getElementById($scope.turns[$scope.index - 1]).style.backgroundColor = $scope.turns[$scope.index - 1];
 
 	        document.getElementById($scope.turns[$scope.index]).style.backgroundColor = "black";
 	        
@@ -31,11 +35,11 @@ app.controller('simonController', ['$scope', '$timeout', '$interval', function($
 
 
 	$scope.$watch('index', function(index){
-		alert($scope.turnQuantity);
+		//alert($scope.turnQuantity);
     	//if (index == $scope.turnQuantity){
-    	if (index == 3){ // hardcoded
+    	if (index == 3) { // hardcoded
+        	//document.getElementById($scope.turns[$scope.index]).style.backgroundColor = $scope.turns[$scope.index];
         	stop();
-        	//document.getElementById('g').style.backgroundColor = "green";
     	}
   	});
 
