@@ -44,10 +44,10 @@ app.controller('simonController', ['$scope', '$interval', function($scope, $inte
 	};
 
 
-	$scope.$watch('index', function(index){
+	$scope.$watch('index', function(index) {
     	if (index == $scope.turnQuantity) {
         	if(index > 0) {
-        		console.log("I will back the color original to the button " + $scope.turns[$scope.index - 1]);
+        		console.log("I will back the color original to the button " + $scope.turns[$scope.index - 1] + "  (HERE, I WOULD LIKE WAIT 1 SECOND :/)");
         		document.getElementById($scope.turns[$scope.index - 1]).style.backgroundColor = $scope.turns[$scope.index - 1];
         	}
         	$scope.index = 0;
@@ -58,6 +58,7 @@ app.controller('simonController', ['$scope', '$interval', function($scope, $inte
 
   	function stop () {
 	    $interval.cancel($scope.intervalId);
+
   	};
 
 
@@ -94,4 +95,8 @@ app.controller('simonController', ['$scope', '$interval', function($scope, $inte
 	TO-DO:
 	[ ]: blink when there're two equal colors in a sequence
 	[ ]: deactivate the click buttons when the sequence are showing to the user
+
+
+
+	BUG TO FIX: the last color changed, return to the original color so fast. Then, it's impossible to notice.
 */
