@@ -180,3 +180,27 @@
 		border: 7px solid white;
 	}
 }
+
+@media screen and (max-width: 507px) {
+
+	.button-simon button {
+		width: calc(var(--size-buttons) - 200px);
+		height: calc(var(--size-buttons) - 200px);
+
+		border: 1px solid white;
+
+		outline: none;  /* [1] */
+	}
+	.simon-control-panel {
+		background-color: var(--background-color-control-panel);
+		width:  calc(var(--size-control-panel) - 100px);
+		height: calc(var(--size-control-panel) - 100px);
+		border-radius: 50%;
+
+		overflow: hidden; /* hidden when overflow my circle :D */
+
+		border: 5px solid white;
+	}
+}
+
+/* Since some resolution, pass the controls buttons out the game (above the circle, for example) */
