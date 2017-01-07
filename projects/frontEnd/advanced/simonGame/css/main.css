@@ -55,6 +55,11 @@
 	outline: none;  /* [1] */
 }
 
+.buttons-row-1 button:last-child, .buttons-row-2 button:last-child {
+	border-left: 0px;
+
+}
+
 .button-simon button:active {
 	border: 5px dashed white; /* [2] */
 }
