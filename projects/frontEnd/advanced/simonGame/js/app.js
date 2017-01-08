@@ -5,14 +5,16 @@ app.controller('simonController', ['$scope', '$interval', function($scope, $inte
 	$scope.turns        = []; // sequence of the actual turn (the last one)
 	$scope.turnQuantity = 0;
 	$scope.index 		= 0;
-	
+
 	var colors = ['green', 'red', 'yellow', 'blue'];
 
+
+	processTurn(20); //Now, I'm creating the entire array before call the Game
 
 
 	/* Function called when the button are pressed */
 	$scope.startTurn = function() {
-		processTurn();
+		//processTurn();
 		printPatternButtons();
 
 		console.log($scope.turns);
@@ -45,7 +47,7 @@ app.controller('simonController', ['$scope', '$interval', function($scope, $inte
 
 
 	$scope.$watch('index', function(index) {
-    	if (index == $scope.turnQuantity) {
+    	if (index == $scope.counter) {
         	if(index > 0) {
         		console.log("I will back the color original to the button " + $scope.turns[$scope.index - 1] + "  (HERE, I WOULD LIKE WAIT 1 SECOND :/)");
         		document.getElementById($scope.turns[$scope.index - 1]).style.backgroundColor = $scope.turns[$scope.index - 1];
@@ -58,7 +60,7 @@ app.controller('simonController', ['$scope', '$interval', function($scope, $inte
 
   	function stop () {
 	    $interval.cancel($scope.intervalId);
-
+	    $scope.counter++;
   	};
 
 
