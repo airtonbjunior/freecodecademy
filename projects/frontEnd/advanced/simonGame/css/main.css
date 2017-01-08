@@ -31,6 +31,8 @@
 	overflow: hidden; /* hidden when overflow my circle :D */
 
 	border: 10px solid white;
+
+	text-align: center;
 }
 
 .simon-wrapper, .simon-control-panel {
