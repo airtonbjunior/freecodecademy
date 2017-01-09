@@ -1,7 +1,7 @@
 colors         = ['green', 'red', 'yellow', 'blue'];
 turns          = [];
 totalTurns     = 20;
-level          = 3;
+level          = 2;
 lightOn        = true;
 userTurn 	   = 1; //i
 buttonsBlocked = true;
@@ -131,7 +131,7 @@ document.getElementById("blue").onclick = function(){
 		console.log("Enough! This level is over");
 		return;
 	}
-		
+
 	if(turns[userTurn - 1] === "blue") {
 		console.log("YOU ARE RIGHT");
 		userTurn++;
