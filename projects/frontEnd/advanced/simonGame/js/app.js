@@ -1,88 +1,48 @@
-var app = angular.module('simon', []);
+totalTurns = 20;
+level  = 1;
+turn   = 1;
+turns  = [];
+colors = ['green', 'red', 'yellow', 'blue'];
 
-app.controller('simonController', ['$scope', '$interval', function($scope, $interval) {
-	$scope.counter      = 1;  // level
-	$scope.turns        = []; // sequence of the actual turn (the last one)
-	$scope.turnQuantity = 0;
-	$scope.index 		= 0;
+document.getElementById("level").innerHTML = level;
+
+
+
+i = 0;
+chooseAllColors();
+console.log(turns);
+printPattern();
+
+function printPattern() {
+	if(i == 10) return;
 	
-	var colors = ['green', 'red', 'yellow', 'blue'];
 
-
-
-	/* Function called when the button are pressed */
-	$scope.startTurn = function() {
-		processTurn();
-		printPatternButtons();
-
-		console.log($scope.turns);
-		console.log("$scope.index -> " + $scope.index);
-		console.log("$scope.turnQuantity -> " + $scope.turnQuantity);
-	}
-
-
-
-	/* Show the pattern to the user through the buttons */
-	function printPatternButtons () {
-	    $scope.intervalId = $interval(function() { // [3]
-
-	        if($scope.index > 0) {
-	        	document.getElementById($scope.turns[$scope.index - 1]).style.backgroundColor = $scope.turns[$scope.index - 1];
-	        }
-
-	        console.log("I will change the color of the button " + $scope.turns[$scope.index]);
-	        document.getElementById($scope.turns[$scope.index]).style.backgroundColor = "black";
-	        
-	        $scope.index++;
-	    }, 1000);
-	};
-
-
-	/* Called when the colored buttons are pressed */
-	$scope.buttonClicked = function(buttonId) {
-		//alert("button " + buttonId + " clicked");
-	};
-
-
-	$scope.$watch('index', function(index) {
-    	if (index == $scope.turnQuantity) {
-        	if(index > 0) {
-        		console.log("I will back the color original to the button " + $scope.turns[$scope.index - 1] + "  (HERE, I WOULD LIKE WAIT 1 SECOND :/)");
-        		document.getElementById($scope.turns[$scope.index - 1]).style.backgroundColor = $scope.turns[$scope.index - 1];
-        	}
-        	$scope.index = 0;
-        	console.log("I will stop the interval now!");
-        	stop();
-    	}
-  	});
-
-  	function stop () {
-	    $interval.cancel($scope.intervalId);
-
-  	};
-
-
-
-	/* Create the sequence of a level (1 to 20) */
-	function processTurn(level) {
-		if(!!!level) { 
-			$scope.turns.push(chooseColor());
-			$scope.turnQuantity++;
+	var timeout = setTimeout(function() {
+		console.log("hi!");
+		if(i % 2 == 0) {
+			//document.getElementById("green").style.opacity = .75;
+			document.getElementById(turns[i]).style.opacity = .75;
 		}
 		else {
-			for(var i = 0; i < level; i++) {
-				$scope.turns.push(chooseColor());
-			}
-			$scope.turnQuantity = $scope.turns.length;
+			//document.getElementById("green").style.opacity = 1;
+			document.getElementById(turns[i-1]).style.opacity = 1; 
 		}
+		i++
+		printPattern();
+	}, 1000);
+}
+
+
+
+function chooseOneColor() {
+	turns.push(colors[Math.floor(Math.random() * 4)]);
+}
+
+function chooseAllColors() {
+	for (var i = 0; i < totalTurns; i++) {
+		turns.push(colors[Math.floor(Math.random() * 4)]);
 	}
-
-
-	function chooseColor() {
-		return colors[Math.floor(Math.random() * 4)]; // 0 to 3 (3 colors)
-	}
-
-}]);
+}
 
 /*
 	References:
