@@ -1,27 +1,41 @@
-totalTurns = 20;
-level   = 1;
-turn    = 1;
-turns   = [];
-colors  = ['green', 'red', 'yellow', 'blue'];
-lightOn = true;
+colors         = ['green', 'red', 'yellow', 'blue'];
+turns          = [];
+totalTurns     = 20;
+level          = 3;
+lightOn        = true;
+userTurn 	   = 1; //i
+buttonsBlocked = true;
+userFinish     = false;
 
 document.getElementById("level").innerHTML = level;
 
 i = 0;
 chooseAllColors();
 console.log(turns);
-printPattern();
-
+printPattern(level);
 
 /* Return the last button to the original color */
 setTimeout(function() {
 	document.getElementById(turns[i-1]).style.opacity = 1; 	
+	buttonsBlocked = false; // unblock the buttons
+	readUserTurn();
 }, (level) * 2 * 1000); // two times per button (color on and color off)
 
 
-function printPattern() {
+
+
+
+function readUserTurn() {
+	if(userTurn == level) return;
+	//while(!userFinish) {
+
+	//}
+}
+
+
+function printPattern(levelPrint) {
 	
-	if(i == 1) {
+	if(i == level) {
 		return;
 		setTimeout(function(){
 			document.getElementById(turns[i-1]).style.opacity = 1; 
@@ -31,7 +45,7 @@ function printPattern() {
 	
 
 	var timeout = setTimeout(function() {
-		console.log("hi!");
+		
 		if(lightOn) {
 			document.getElementById(turns[i]).style.opacity = .50;
 			new Audio('audio/simonSound' + turns[i] + '.mp3').play(); // Name pattern -> simonSound[COLOR].mp3
@@ -56,6 +70,55 @@ function chooseAllColors() {
 		turns.push(colors[Math.floor(Math.random() * 4)]);
 	}
 }
+
+/* Put onclick event here in js, so I don't need put this on html - Unobtrusive Javascript */
+document.getElementById("green").onclick = function(){
+	if(buttonsBlocked) return;
+	
+	if(turns[userTurn - 1] === "green") {
+		console.log("YOU ARE RIGHT");
+		userTurn++;
+	}
+	else {
+		console.log("YOU ARE WRONG! GAME OVER IF THE STRICT MODE IS DEACTIVATE");
+	}
+	
+
+};
+document.getElementById("red").onclick = function(){
+	if(buttonsBlocked) return;
+	
+	if(turns[userTurn - 1] === "red") {
+		console.log("YOU ARE RIGHT");
+		userTurn++;
+	}
+	else {
+		console.log("YOU ARE WRONG! GAME OVER IF THE STRICT MODE IS DEACTIVATE");
+	}
+};
+document.getElementById("yellow").onclick = function(){
+	if(buttonsBlocked) return;
+	
+	if(turns[userTurn - 1] === "yellow") {
+		console.log("YOU ARE RIGHT");
+		userTurn++;
+	}
+	else {
+		console.log("YOU ARE WRONG! GAME OVER IF THE STRICT MODE IS DEACTIVATE");
+	}
+
+};
+document.getElementById("blue").onclick = function(){
+	if(buttonsBlocked) return;
+	
+	if(turns[userTurn - 1] === "blue") {
+		console.log("YOU ARE RIGHT");
+		userTurn++;
+	}
+	else {
+		console.log("YOU ARE WRONG! GAME OVER IF THE STRICT MODE IS DEACTIVATE");
+	}
+};
 
 /*
 	References:
