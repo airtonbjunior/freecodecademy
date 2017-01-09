@@ -4,14 +4,14 @@ turn   = 1;
 turns  = [];
 colors = ['green', 'red', 'yellow', 'blue'];
 
+
 document.getElementById("level").innerHTML = level;
-
-
 
 i = 0;
 chooseAllColors();
 console.log(turns);
 printPattern();
+
 
 function printPattern() {
 	if(i == 10) return;
@@ -20,11 +20,9 @@ function printPattern() {
 	var timeout = setTimeout(function() {
 		console.log("hi!");
 		if(i % 2 == 0) {
-			//document.getElementById("green").style.opacity = .75;
 			document.getElementById(turns[i]).style.opacity = .75;
 		}
 		else {
-			//document.getElementById("green").style.opacity = 1;
 			document.getElementById(turns[i-1]).style.opacity = 1; 
 		}
 		i++

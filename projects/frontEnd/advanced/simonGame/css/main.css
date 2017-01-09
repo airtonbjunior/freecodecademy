@@ -59,6 +59,11 @@
 	outline: none;  /* [1] */
 }
 
+.buttons-row-1 button:last-child, .buttons-row-2 button:last-child {
+	border-left: 0px;
+
+}
+
 .button-simon button:active {
 	border: 5px dashed white; /* [2] */
 }
@@ -204,6 +209,50 @@
 		overflow: hidden; /* hidden when overflow my circle :D */
 
 		border: 5px solid white;
+	}
+}
+
+@media screen and (max-width: 407px) {
+
+	.button-simon button {
+		width: calc(var(--size-buttons) - 215px);
+		height: calc(var(--size-buttons) - 215px);
+
+		border: 1px solid white;
+
+		outline: none;  /* [1] */
+	}
+	.simon-control-panel {
+		background-color: var(--background-color-control-panel);
+		width:  calc(var(--size-control-panel) - 110px);
+		height: calc(var(--size-control-panel) - 110px);
+		border-radius: 50%;
+
+		overflow: hidden; /* hidden when overflow my circle :D */
+
+		border: 2px solid white;
+	}
+}
+
+@media screen and (max-width: 347px) {
+
+	.button-simon button {
+		width: calc(var(--size-buttons) - 230px);
+		height: calc(var(--size-buttons) - 230px);
+
+		border: 1px solid white;
+
+		outline: none;  /* [1] */
+	}
+	.simon-control-panel {
+		background-color: var(--background-color-control-panel);
+		width:  calc(var(--size-control-panel) - 125px);
+		height: calc(var(--size-control-panel) - 125px);
+		border-radius: 50%;
+
+		overflow: hidden; /* hidden when overflow my circle :D */
+
+		border: 1px solid white;
 	}
 }
 
