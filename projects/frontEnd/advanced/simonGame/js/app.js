@@ -74,6 +74,11 @@ function chooseAllColors() {
 /* Put onclick event here in js, so I don't need put this on html - Unobtrusive Javascript */
 document.getElementById("green").onclick = function(){
 	if(buttonsBlocked) return;
+
+	if(userTurn > level) {
+		console.log("Enough! This level is over");
+		return;
+	}
 	
 	if(turns[userTurn - 1] === "green") {
 		console.log("YOU ARE RIGHT");
@@ -88,6 +93,12 @@ document.getElementById("green").onclick = function(){
 document.getElementById("red").onclick = function(){
 	if(buttonsBlocked) return;
 	
+
+	if(userTurn > level) {
+		console.log("Enough! This level is over");
+		return;
+	}
+
 	if(turns[userTurn - 1] === "red") {
 		console.log("YOU ARE RIGHT");
 		userTurn++;
@@ -99,6 +110,11 @@ document.getElementById("red").onclick = function(){
 document.getElementById("yellow").onclick = function(){
 	if(buttonsBlocked) return;
 	
+	if(userTurn > level) {
+		console.log("Enough! This level is over");
+		return;
+	}
+
 	if(turns[userTurn - 1] === "yellow") {
 		console.log("YOU ARE RIGHT");
 		userTurn++;
@@ -110,7 +126,12 @@ document.getElementById("yellow").onclick = function(){
 };
 document.getElementById("blue").onclick = function(){
 	if(buttonsBlocked) return;
-	
+
+	if(userTurn > level) {
+		console.log("Enough! This level is over");
+		return;
+	}
+		
 	if(turns[userTurn - 1] === "blue") {
 		console.log("YOU ARE RIGHT");
 		userTurn++;
