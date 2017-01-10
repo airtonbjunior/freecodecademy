@@ -9,8 +9,7 @@ buttonsBlocked = true;
 userFinish     = false;
 restrict       = false;
 
-
-game();
+document.getElementById("level").innerHTML = "Press Start";
 
 
 function game() {
@@ -19,15 +18,15 @@ function game() {
 		return;
 	}
 
-	lightOn = true;
-	userTurn = 1;
+	lightOn        = true;
+	buttonsBlocked = true;
+	userTurn       = 1;
 	level++;
 	
 	document.getElementById("level").innerHTML = level;
 	
 	i = 0;
-	chooseAllColors();
-	console.log(turns);
+	
 	printPattern(level);
 	
 	/* Return the last button to the original color */
@@ -218,6 +217,15 @@ document.getElementById("blue").onclick = function(){
 		}		
 	}
 };
+
+
+/* Button Start */
+document.getElementById("startButton").onclick = function() {
+	console.log("Starting the game");
+	chooseAllColors(); 
+	console.log(turns);
+	game();
+}
 
 /*
 	References:

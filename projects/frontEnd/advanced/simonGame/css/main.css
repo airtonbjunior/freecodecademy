@@ -22,13 +22,15 @@
 	--background-color-control-panel: #00ff00;
 	--background-color-control-panel: white;
 
-	--border-color: white;
+	--border-color: black;
+	--border-color-control-pannel: black;
 	--background-color-page: white;
 }
 
 body {
 	background: var(--background-color-page);
 }
+
 
 .simon-control-panel {
 	background-color: var(--background-color-control-panel);
@@ -40,7 +42,7 @@ body {
 
 	overflow: hidden; /* hidden when overflow my circle :D */
 
-	border: 10px solid var(--border-color);
+	border: 10px solid var(--border-color-control-pannel);
 
 	text-align: center;
 }
@@ -58,22 +60,26 @@ body {
 	display: inline-block;
 }
 
+.buttons-row-1 div {
+	border-bottom: 5px solid var(--background-color-page);
+}
+
 .button-simon button {
 	width: var(--size-buttons);
 	height: var(--size-buttons);
 
-	border: 5px solid var(--border-color);
+	border: 10px solid var(--border-color);
 
 	outline: none;  /* [1] */
 }
 
-.buttons-row-1 button:last-child, .buttons-row-2 button:last-child {
-	border-left: 0px;
+.buttons-row-1 div:first-child, .buttons-row-2 div:first-child {
+	border-right: 4px solid var(--background-color-page);
 
 }
 
 .button-simon button:active {
-	border: 5px dashed var(--border-color); /* [2] */
+	border: 10px dotted var(--border-color); /* [2] */
 }
 
 /* The class chain is made for didact reasons :) */
