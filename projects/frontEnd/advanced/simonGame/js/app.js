@@ -1,27 +1,36 @@
 colors         = ['green', 'red', 'yellow', 'blue'];
 turns          = [];
 totalTurns     = 20;
-level          = 2;
+level          = 1;
 lightOn        = true;
 userTurn 	   = 1; //i
 buttonsBlocked = true;
 userFinish     = false;
 
-document.getElementById("level").innerHTML = level;
-
-i = 0;
-chooseAllColors();
-console.log(turns);
-printPattern(level);
-
-/* Return the last button to the original color */
-setTimeout(function() {
-	document.getElementById(turns[i-1]).style.opacity = 1; 	
-	buttonsBlocked = false; // unblock the buttons
-	readUserTurn();
-}, (level) * 2 * 1000); // two times per button (color on and color off)
 
 
+game();
+
+
+function game() {
+	lightOn = true;
+	userTurn = 1;
+	level++;
+	document.getElementById("level").innerHTML = level;
+	
+	i = 0;
+	chooseAllColors();
+	console.log(turns);
+	printPattern(level);
+	
+	/* Return the last button to the original color */
+	setTimeout(function() {
+		document.getElementById(turns[i-1]).style.opacity = 1; 	
+		buttonsBlocked = false; // unblock the buttons
+		readUserTurn();
+	}, (level) * 2 * 1000); // two times per button (color on and color off)
+
+}
 
 
 
@@ -81,8 +90,16 @@ document.getElementById("green").onclick = function(){
 	}
 	
 	if(turns[userTurn - 1] === "green") {
+		new Audio('audio/simonSoundgreen.mp3').play();
 		console.log("YOU ARE RIGHT");
-		userTurn++;
+
+		if(userTurn == level) {
+			console.log("Here, I will call the next level");
+			game();
+		} else {
+			userTurn++;	
+		}
+
 	}
 	else {
 		console.log("YOU ARE WRONG! GAME OVER IF THE STRICT MODE IS DEACTIVATE");
@@ -100,8 +117,16 @@ document.getElementById("red").onclick = function(){
 	}
 
 	if(turns[userTurn - 1] === "red") {
+		new Audio('audio/simonSoundred.mp3').play();
 		console.log("YOU ARE RIGHT");
-		userTurn++;
+
+		if(userTurn == level) {
+			console.log("Here, I will call the next level");
+			game();
+		} else {
+			userTurn++;	
+		}
+
 	}
 	else {
 		console.log("YOU ARE WRONG! GAME OVER IF THE STRICT MODE IS DEACTIVATE");
@@ -116,8 +141,16 @@ document.getElementById("yellow").onclick = function(){
 	}
 
 	if(turns[userTurn - 1] === "yellow") {
+		new Audio('audio/simonSoundyellow.mp3').play();
 		console.log("YOU ARE RIGHT");
-		userTurn++;
+
+		if(userTurn == level) {
+			console.log("Here, I will call the next level");
+			game();
+		} else {
+			userTurn++;	
+		}
+
 	}
 	else {
 		console.log("YOU ARE WRONG! GAME OVER IF THE STRICT MODE IS DEACTIVATE");
@@ -133,8 +166,16 @@ document.getElementById("blue").onclick = function(){
 	}
 
 	if(turns[userTurn - 1] === "blue") {
+		new Audio('audio/simonSoundblue.mp3').play();
 		console.log("YOU ARE RIGHT");
-		userTurn++;
+		
+		if(userTurn == level) {
+			console.log("Here, I will call the next level");
+			game();
+		} else {
+			userTurn++;	
+		}
+	
 	}
 	else {
 		console.log("YOU ARE WRONG! GAME OVER IF THE STRICT MODE IS DEACTIVATE");
@@ -150,8 +191,8 @@ document.getElementById("blue").onclick = function(){
 
 
 	TO-DO:
-	[ ]: blink when there're two equal colors in a sequence
-	[ ]: deactivate the click buttons when the sequence are showing to the user
+	[X]: blink when there're two equal colors in a sequence
+	[X]: deactivate the click buttons when the sequence are showing to the user
 
 
 
