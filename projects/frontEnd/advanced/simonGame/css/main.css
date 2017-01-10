@@ -331,7 +331,7 @@ input:checked + .slider:before {
 		width: calc(var(--size-buttons) - 150px);
 		height: calc(var(--size-buttons) - 150px);
 
-		border: 7px solid var(--border-color);
+		border: 5px solid var(--border-color);
 
 		outline: none;  /* [1] */
 	}
@@ -343,10 +343,10 @@ input:checked + .slider:before {
 
 		overflow: hidden; /* hidden when overflow my circle :D */
 
-		border: 7px solid var(--border-color);
+		border: 5px solid var(--border-color);
 	}
 	.button-simon button:active {
-		border: 7px dotted var(--border-color);
+		border: 5px dotted var(--border-color);
 	}
 }
 
@@ -356,7 +356,7 @@ input:checked + .slider:before {
 		width: calc(var(--size-buttons) - 175px);
 		height: calc(var(--size-buttons) - 175px);
 
-		border: 7px solid var(--border-color);
+		border: 5px solid var(--border-color);
 
 		outline: none;  /* [1] */
 	}
@@ -368,10 +368,22 @@ input:checked + .slider:before {
 
 		overflow: hidden; /* hidden when overflow my circle :D */
 
-		border: 7px solid var(--border-color);
+		border: 5px solid var(--border-color);
 	}
 	.button-simon button:active {
-		border: 7px dotted var(--border-color);
+		border: 5px dotted var(--border-color);
+	}
+	p {
+		margin-top: 5px;
+		font-size: .7em;
+	}
+	#strictButton, #startButton {
+		margin-top: 5px;
+		padding: 1px 1px;
+		font-size: .8em;
+	}
+	#startButton {
+		margin-top: 10px;
 	}
 }
 
