@@ -15,8 +15,12 @@ document.getElementById("level").innerHTML = "Press Start";
 document.getElementById("strictButton").innerHTML = "Strict OFF";
 
 function game() {
-	if(level == 20) {
-		console.log("YOU WIN!!! DO SOMETHING HERE!");
+	if(level == totalTurns) {
+		new Audio('audio/win.mp3').play();
+		document.getElementById("level").innerHTML = "You Win!";
+		document.getElementById("startButton").innerHTML = "Start";
+		level = 0;
+		started = false;
 		return;
 	}
 
