@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Chewy|Monoton|Press+Start+2P');
+
 /* Simple CSS Reset */
 * {
 	margin: 0;
@@ -26,6 +28,8 @@
 	--border-color-control-pannel: white;
 	--background-color-page: #050a20;
 
+	--buttons-control-background: #fa4e5f;
+
 	--font-color: white;
 }
 
@@ -36,6 +40,27 @@ body {
 h1, p {
 	color: var(--font-color);
 }
+
+h1 {
+	padding-top: 20px;
+	font-family: 'Monoton', cursive;
+}
+p {
+	font-family: 'Press Start 2P', cursive;
+}
+
+#strictButton, #startButton {
+	margin-top: 10px;
+	padding: 10px 20px;
+
+	background: var(--buttons-control-background);
+	font-family: 'Chewy', cursive;
+
+	border: 0px;
+
+	width: 80%;
+}
+
 
 .simon-control-panel {
 	background-color: var(--background-color-control-panel);
@@ -198,7 +223,15 @@ input:checked + .slider:before {
 
 		border: 5px solid var(--border-color);
 	}
-
+	.button-simon button:active {
+		border: 5px dotted var(--border-color);
+	}
+	h1 {
+		padding-top: 10px;
+	}
+	p {
+		margin-top: 35px;
+	}
 }
 
 @media screen and (max-width: 1015px) {
@@ -221,6 +254,30 @@ input:checked + .slider:before {
 
 		border: 5px solid var(--border-color);
 	}
+	.button-simon button:active {
+		border: 5px dotted var(--border-color);
+	}
+	h1 {
+		padding-top: 5px;
+		font-size: .9em;
+	}
+	p {
+		margin-top: 5px;
+		font-size: .8em;
+	}
+	#strictButton, #startButton {
+		margin-top: 5px;
+		padding: 10px 10px;
+
+
+		font-size: .9em;
+		border: 0px;
+
+		width: 100%;
+	}
+	#startButton {
+		margin-top: 15px;
+	}
 }
 
 @media screen and (max-width: 815px) {
@@ -242,6 +299,29 @@ input:checked + .slider:before {
 		overflow: hidden; /* hidden when overflow my circle :D */
 
 		border: 5px solid var(--border-color);
+	}
+	.button-simon button:active {
+		border: 5px dotted var(--border-color);
+	}
+	h1 {
+		display: none;
+	}
+	p {
+		margin-top: -5px;
+		font-size: .8em;
+	}
+	#strictButton, #startButton {
+		margin-top: 5px;
+		padding: 5px 5px;
+
+
+		font-size: .9em;
+		border: 0px;
+
+		width: 100%;
+	}
+	#startButton {
+		margin-top: 15px;
 	}
 }
 

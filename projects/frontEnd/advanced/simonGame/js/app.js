@@ -117,6 +117,7 @@ document.getElementById("green").onclick = function(){
 		if(!strict) {
 			level--; // inside the game function there is a level++ instruction. So, I decrement because the user will play the same level.
 			buttonsBlocked = true;
+			document.getElementById("level").innerHTML = "Error!";
 			setTimeout(game, restartDelay);
 		}
 		else {
@@ -155,6 +156,7 @@ document.getElementById("red").onclick = function(){
 		if(!strict) {
 			level--; // inside the game function there is a level++ instruction. So, I decrement because the user will play the same level.
 			buttonsBlocked = true;
+			document.getElementById("level").innerHTML = "Error!";
 			setTimeout(game, restartDelay);
 		}
 		else {
@@ -192,6 +194,7 @@ document.getElementById("yellow").onclick = function(){
 		if(!strict) {
 			level--; // inside the game function there is a level++ instruction. So, I decrement because the user will play the same level.
 			buttonsBlocked = true;
+			document.getElementById("level").innerHTML = "Error!";
 			setTimeout(game, restartDelay);
 		}
 		else {
