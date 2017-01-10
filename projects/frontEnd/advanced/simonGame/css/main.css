@@ -390,8 +390,8 @@ input:checked + .slider:before {
 @media screen and (max-width: 515px) {
 
 	.button-simon button {
-		width: calc(var(--size-buttons) - 200px);
-		height: calc(var(--size-buttons) - 200px);
+		width: calc(var(--size-buttons) - 195px);
+		height: calc(var(--size-buttons) - 195px);
 
 		border: 3px solid var(--border-color);
 
@@ -399,8 +399,8 @@ input:checked + .slider:before {
 	}
 	.simon-control-panel {
 		background-color: var(--background-color-control-panel);
-		width:  calc(var(--size-control-panel) - 200px);
-		height: calc(var(--size-control-panel) - 200px);
+		width:  calc(var(--size-control-panel) - 195px);
+		height: calc(var(--size-control-panel) - 195px);
 		border-radius: 50%;
 
 		overflow: hidden; /* hidden when overflow my circle :D */
@@ -410,9 +410,42 @@ input:checked + .slider:before {
 	.button-simon button:active {
 		border: 3px dotted var(--border-color);
 	}
+	#strictButton, #startButton {
+		margin-top: 5px;
+		padding: 2px 0px;
+		font-size: .7em;
+	}
+	#startButton {
+		margin-top: 5px;
+	}
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 435px) {
+
+	.button-simon button {
+		width: calc(var(--size-buttons) - 205px);
+		height: calc(var(--size-buttons) - 205px);
+
+		border: 2px solid var(--border-color);
+
+		outline: none;  /* [1] */
+	}
+	.simon-control-panel {
+		background-color: var(--background-color-control-panel);
+		width:  calc(var(--size-control-panel) - 205px);
+		height: calc(var(--size-control-panel) - 205px);
+		border-radius: 50%;
+
+		overflow: hidden; /* hidden when overflow my circle :D */
+
+		border: 2px solid var(--border-color);
+	}
+	.button-simon button:active {
+		border: 2px dotted var(--border-color);
+	}
+}
+
+@media screen and (max-width: 395px) {
 
 	.button-simon button {
 		width: calc(var(--size-buttons) - 215px);
@@ -434,14 +467,15 @@ input:checked + .slider:before {
 	}
 	.button-simon button:active {
 		border: 2px dotted var(--border-color);
+		opacity: .5;
 	}
 }
 
 @media screen and (max-width: 355px) {
 
 	.button-simon button {
-		width: calc(var(--size-buttons) - 230px);
-		height: calc(var(--size-buttons) - 230px);
+		width: calc(var(--size-buttons) - 225px);
+		height: calc(var(--size-buttons) - 225px);
 
 		border: 2px solid var(--border-color);
 
@@ -449,8 +483,8 @@ input:checked + .slider:before {
 	}
 	.simon-control-panel {
 		background-color: var(--background-color-control-panel);
-		width:  calc(var(--size-control-panel) - 230px);
-		height: calc(var(--size-control-panel) - 230px);
+		width:  calc(var(--size-control-panel) - 225px);
+		height: calc(var(--size-control-panel) - 225px);
 		border-radius: 50%;
 
 		overflow: hidden; /* hidden when overflow my circle :D */
