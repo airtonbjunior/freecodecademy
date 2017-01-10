@@ -469,6 +469,18 @@ input:checked + .slider:before {
 		border: 2px dotted var(--border-color);
 		opacity: .5;
 	}
+	p {
+		font-size: .5em;
+	}
+	#strictButton, #startButton {
+		margin-top: 5px;
+		padding: 2px 0px;
+		font-size: .6em;
+		width: 110%;
+	}
+	#startButton {
+		margin-top: 0px;
+	}
 }
 
 @media screen and (max-width: 355px) {
