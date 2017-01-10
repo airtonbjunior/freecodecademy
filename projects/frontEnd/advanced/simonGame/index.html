@@ -8,10 +8,18 @@
 	<div class="simon-wrapper">
 		<div class="simon-control-panel">
 			<h1>Simon</h1>
-			<div><p id="level">{{ counter }}</p></div>
-			<button id="startButton">Start</button>
-			<button>Strict</button>
-			<button>On/Off Button</button>
+			<div class="simon-control-panel-buttons">				
+				<div><p id="level"></p></div>
+				<button id="startButton">Start</button>
+				<button id="strictButton">Strict OFF</button>
+				<button>On/Off Button</button>
+				<!-- [4]
+				<label class="switch">
+  					<input type="checkbox" checked>
+  					<div class="slider round"></div>
+				</label>
+				-->
+			</div>
 		</div>
 		<div class="buttons-row-1">
 			<div class="button-simon button-1 green">
