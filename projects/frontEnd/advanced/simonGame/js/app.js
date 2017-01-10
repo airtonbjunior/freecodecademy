@@ -1,21 +1,28 @@
 colors         = ['green', 'red', 'yellow', 'blue'];
 turns          = [];
 totalTurns     = 20;
-level          = 1;
+timeDelay      = 400; // milliseconds
+level          = 0;
 lightOn        = true;
 userTurn 	   = 1; //i
 buttonsBlocked = true;
 userFinish     = false;
-
+restrict       = false;
 
 
 game();
 
 
 function game() {
+	if(level == 20) {
+		console.log("YOU WIN!!! DO SOMETHING HERE!");
+		return;
+	}
+
 	lightOn = true;
 	userTurn = 1;
 	level++;
+	
 	document.getElementById("level").innerHTML = level;
 	
 	i = 0;
@@ -28,8 +35,7 @@ function game() {
 		document.getElementById(turns[i-1]).style.opacity = 1; 	
 		buttonsBlocked = false; // unblock the buttons
 		readUserTurn();
-	}, (level) * 2 * 1000); // two times per button (color on and color off)
-
+	}, (level) * 2 * timeDelay); // two times per button (color on and color off)
 }
 
 
@@ -49,7 +55,7 @@ function printPattern(levelPrint) {
 		setTimeout(function(){
 			document.getElementById(turns[i-1]).style.opacity = 1; 
 			return;
-		}, 1000);
+		}, timeDelay);
 	}
 	
 
@@ -65,7 +71,7 @@ function printPattern(levelPrint) {
 		}
 		lightOn = !lightOn;
 		printPattern();
-	}, 1000);
+	}, timeDelay);
 }
 
 
@@ -79,6 +85,9 @@ function chooseAllColors() {
 		turns.push(colors[Math.floor(Math.random() * 4)]);
 	}
 }
+
+
+/* BUTTONS */
 
 /* Put onclick event here in js, so I don't need put this on html - Unobtrusive Javascript */
 document.getElementById("green").onclick = function(){
@@ -103,6 +112,13 @@ document.getElementById("green").onclick = function(){
 	}
 	else {
 		console.log("YOU ARE WRONG! GAME OVER IF THE STRICT MODE IS DEACTIVATE");
+		if(!restrict) {
+			level--; // inside the game function there is a level++ instruction. So, I decrement because the user will play the same level.
+			game();
+		}
+		else {
+			alert("Game Over!");
+		}
 	}
 	
 
@@ -130,6 +146,13 @@ document.getElementById("red").onclick = function(){
 	}
 	else {
 		console.log("YOU ARE WRONG! GAME OVER IF THE STRICT MODE IS DEACTIVATE");
+		if(!restrict) {
+			level--; // inside the game function there is a level++ instruction. So, I decrement because the user will play the same level.
+			game();
+		}
+		else {
+			alert("Game Over!");
+		}
 	}
 };
 document.getElementById("yellow").onclick = function(){
@@ -154,6 +177,13 @@ document.getElementById("yellow").onclick = function(){
 	}
 	else {
 		console.log("YOU ARE WRONG! GAME OVER IF THE STRICT MODE IS DEACTIVATE");
+		if(!restrict) {
+			level--; // inside the game function there is a level++ instruction. So, I decrement because the user will play the same level.
+			game();
+		}
+		else {
+			alert("Game Over!");
+		}		
 	}
 
 };
@@ -179,6 +209,13 @@ document.getElementById("blue").onclick = function(){
 	}
 	else {
 		console.log("YOU ARE WRONG! GAME OVER IF THE STRICT MODE IS DEACTIVATE");
+		if(!restrict) {
+			level--; // inside the game function there is a level++ instruction. So, I decrement because the user will play the same level.
+			game();
+		}
+		else {
+			alert("Game Over!");
+		}		
 	}
 };
 
@@ -193,7 +230,8 @@ document.getElementById("blue").onclick = function(){
 	TO-DO:
 	[X]: blink when there're two equal colors in a sequence
 	[X]: deactivate the click buttons when the sequence are showing to the user
-
+	[ ]: let the user configures the time delay
+	[ ]: end game
 
 
 	BUG TO FIX: the last color changed, return to the original color so fast. Then, it's impossible to notice.
