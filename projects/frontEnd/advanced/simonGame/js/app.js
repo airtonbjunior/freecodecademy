@@ -9,6 +9,7 @@ userTurn 	   = 1; //i
 buttonsBlocked = true;
 userFinish     = false;
 strict         = false;
+started        = false;
 
 document.getElementById("level").innerHTML = "Press Start";
 document.getElementById("strictButton").innerHTML = "Strict OFF";
@@ -25,6 +26,7 @@ function game() {
 	level++;
 	
 	document.getElementById("level").innerHTML = "Level " + level;
+	document.getElementById("startButton").disabled = true;
 	
 	i = 0;
 	
@@ -34,6 +36,7 @@ function game() {
 	setTimeout(function() {
 		document.getElementById(turns[i-1]).style.opacity = 1; 	
 		buttonsBlocked = false; // unblock the buttons
+		document.getElementById("startButton").disabled = false;
 		readUserTurn();
 	}, (level) * 2 * timeDelay); // two times per button (color on and color off)
 }
@@ -117,7 +120,11 @@ document.getElementById("green").onclick = function(){
 			setTimeout(game, restartDelay);
 		}
 		else {
-			alert("Game Over!");
+			console.log("Game Over");
+			document.getElementById("level").innerHTML = "Game Over";
+			document.getElementById("startButton").innerHTML = "Start";
+			level = 0;
+			return;
 		}
 	}
 };
@@ -151,7 +158,11 @@ document.getElementById("red").onclick = function(){
 			setTimeout(game, restartDelay);
 		}
 		else {
-			alert("Game Over!");
+			console.log("Game Over");
+			document.getElementById("level").innerHTML = "Game Over";
+			document.getElementById("startButton").innerHTML = "Start";
+			level = 0;
+			return;
 		}
 	}
 };
@@ -184,7 +195,11 @@ document.getElementById("yellow").onclick = function(){
 			setTimeout(game, restartDelay);
 		}
 		else {
-			alert("Game Over!");
+			console.log("Game Over");
+			document.getElementById("level").innerHTML = "Game Over";
+			document.getElementById("startButton").innerHTML = "Start";
+			level = 0;
+			return;
 		}		
 	}
 };
@@ -214,10 +229,15 @@ document.getElementById("blue").onclick = function(){
 		if(!strict) {
 			level--; // inside the game function there is a level++ instruction. So, I decrement because the user will play the same level.
 			buttonsBlocked = true;
+			document.getElementById("level").innerHTML = "Error!";
 			setTimeout(game, restartDelay);
 		}
 		else {
-			alert("Game Over!");
+			console.log("Game Over");
+			document.getElementById("level").innerHTML = "Game Over";
+			document.getElementById("startButton").innerHTML = "Start";
+			level = 0;
+			return;
 		}		
 	}
 };
@@ -225,11 +245,26 @@ document.getElementById("blue").onclick = function(){
 
 /* Button Start */
 document.getElementById("startButton").onclick = function() {
-	console.log("Starting the game");
-	document.getElementById("startButton").disabled = true;
-	chooseAllColors(); 
+	turns = [];
+	chooseAllColors();
 	console.log("The turns are -> " + turns);
-	game();
+	if(!started) {
+		started = !started;
+		console.log("Starting the game");
+		document.getElementById("startButton").innerHTML = "Restart";		
+		game();
+		return;
+	} 
+	else {
+		document.getElementById("startButton").innerHTML = "Restart";
+		level = 0;
+		game();
+		return;
+	}
+	
+	 
+	
+
 }
 
 /* Button Strict */
