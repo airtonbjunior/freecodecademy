@@ -476,7 +476,7 @@ input:checked + .slider:before {
 		margin-top: 5px;
 		padding: 2px 0px;
 		font-size: .6em;
-		width: 110%;
+		width: 100%;
 	}
 	#startButton {
 		margin-top: 0px;
