@@ -98,6 +98,7 @@ document.getElementById("green").onclick = function(){
 	}
 	
 	if(turns[userTurn - 1] === "green") {
+		//document.getElementById("green").style.opacity = .50;
 		new Audio('audio/simonSoundgreen.mp3').play();
 		console.log("YOU ARE RIGHT");
 
@@ -119,9 +120,11 @@ document.getElementById("green").onclick = function(){
 			alert("Game Over!");
 		}
 	}
-	
+	//document.getElementById("green").style.opacity = 1;
 
 };
+
+
 document.getElementById("red").onclick = function(){
 	if(buttonsBlocked) return;
 	
@@ -132,6 +135,7 @@ document.getElementById("red").onclick = function(){
 	}
 
 	if(turns[userTurn - 1] === "red") {
+		//document.getElementById("red").style.opacity = .50;
 		new Audio('audio/simonSoundred.mp3').play();
 		console.log("YOU ARE RIGHT");
 
@@ -153,7 +157,10 @@ document.getElementById("red").onclick = function(){
 			alert("Game Over!");
 		}
 	}
+	//document.getElementById("red").style.opacity = 1;
 };
+
+
 document.getElementById("yellow").onclick = function(){
 	if(buttonsBlocked) return;
 	
@@ -164,6 +171,7 @@ document.getElementById("yellow").onclick = function(){
 
 	if(turns[userTurn - 1] === "yellow") {
 		new Audio('audio/simonSoundyellow.mp3').play();
+		//document.getElementById("yellow").style.opacity = .50; /* the :active css doesn't work after the opacity is defined in js on game function */
 		console.log("YOU ARE RIGHT");
 
 		if(userTurn == level) {
@@ -184,8 +192,10 @@ document.getElementById("yellow").onclick = function(){
 			alert("Game Over!");
 		}		
 	}
-
+	//setTimeout(function(){ document.getElementById("yellow").style.opacity = 1; }, 200);
 };
+
+
 document.getElementById("blue").onclick = function(){
 	if(buttonsBlocked) return;
 
@@ -196,6 +206,7 @@ document.getElementById("blue").onclick = function(){
 
 	if(turns[userTurn - 1] === "blue") {
 		new Audio('audio/simonSoundblue.mp3').play();
+		//document.getElementById("blue").style.opacity = .50;
 		console.log("YOU ARE RIGHT");
 		
 		if(userTurn == level) {
@@ -216,6 +227,7 @@ document.getElementById("blue").onclick = function(){
 			alert("Game Over!");
 		}		
 	}
+	//document.getElementById("blue").style.opacity = 1;
 };
 
 
