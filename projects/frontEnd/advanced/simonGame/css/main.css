@@ -17,9 +17,17 @@
 	--blue-button: blue;
 
 	--size-buttons: 300px;
-	--size-control-panel: 200px;
+	--size-control-panel: 300px;
 
 	--background-color-control-panel: #00ff00;
+	--background-color-control-panel: white;
+
+	--border-color: white;
+	--background-color-page: white;
+}
+
+body {
+	background: var(--background-color-page);
 }
 
 .simon-control-panel {
@@ -32,7 +40,7 @@
 
 	overflow: hidden; /* hidden when overflow my circle :D */
 
-	border: 10px solid white;
+	border: 10px solid var(--border-color);
 
 	text-align: center;
 }
@@ -54,7 +62,7 @@
 	width: var(--size-buttons);
 	height: var(--size-buttons);
 
-	border: 5px solid white;
+	border: 5px solid var(--border-color);
 
 	outline: none;  /* [1] */
 }
@@ -65,7 +73,7 @@
 }
 
 .button-simon button:active {
-	border: 5px dashed white; /* [2] */
+	border: 5px dashed var(--border-color); /* [2] */
 }
 
 /* The class chain is made for didact reasons :) */
@@ -96,19 +104,7 @@
 		width: calc(var(--size-buttons) - 50px);
 		height: calc(var(--size-buttons) - 50px);
 
-		border: 5px solid white;
-
-		outline: none;  /* [1] */
-	}
-}
-
-@media screen and (max-width: 1007px) {
-
-	.button-simon button {
-		width: calc(var(--size-buttons) - 100px);
-		height: calc(var(--size-buttons) - 100px);
-
-		border: 5px solid white;
+		border: 5px solid var(--border-color);
 
 		outline: none;  /* [1] */
 	}
@@ -120,83 +116,17 @@
 
 		overflow: hidden; /* hidden when overflow my circle :D */
 
-		border: 10px solid white;
+		border: 10px solid var(--border-color);
 	}
 }
 
-@media screen and (max-width: 807px) {
+@media screen and (max-width: 1007px) {
 
 	.button-simon button {
-		width: calc(var(--size-buttons) - 135px);
-		height: calc(var(--size-buttons) - 135px);
+		width: calc(var(--size-buttons) - 100px);
+		height: calc(var(--size-buttons) - 100px);
 
-		border: 5px solid white;
-
-		outline: none;  /* [1] */
-	}
-	.simon-control-panel {
-		background-color: var(--background-color-control-panel);
-		width:  calc(var(--size-control-panel) - 68px);
-		height: calc(var(--size-control-panel) - 68px);
-		border-radius: 50%;
-
-		overflow: hidden; /* hidden when overflow my circle :D */
-
-		border: 10px solid white;
-	}
-}
-
-@media screen and (max-width: 667px) {
-
-	.button-simon button {
-		width: calc(var(--size-buttons) - 150px);
-		height: calc(var(--size-buttons) - 150px);
-
-		border: 2px solid white;
-
-		outline: none;  /* [1] */
-	}
-	.simon-control-panel {
-		background-color: var(--background-color-control-panel);
-		width:  calc(var(--size-control-panel) - 65px);
-		height: calc(var(--size-control-panel) - 65px);
-		border-radius: 50%;
-
-		overflow: hidden; /* hidden when overflow my circle :D */
-
-		border: 7px solid white;
-	}
-}
-
-@media screen and (max-width: 607px) {
-
-	.button-simon button {
-		width: calc(var(--size-buttons) - 175px);
-		height: calc(var(--size-buttons) - 175px);
-
-		border: 2px solid white;
-
-		outline: none;  /* [1] */
-	}
-	.simon-control-panel {
-		background-color: var(--background-color-control-panel);
-		width:  calc(var(--size-control-panel) - 80px);
-		height: calc(var(--size-control-panel) - 80px);
-		border-radius: 50%;
-
-		overflow: hidden; /* hidden when overflow my circle :D */
-
-		border: 7px solid white;
-	}
-}
-
-@media screen and (max-width: 507px) {
-
-	.button-simon button {
-		width: calc(var(--size-buttons) - 200px);
-		height: calc(var(--size-buttons) - 200px);
-
-		border: 1px solid white;
+		border: 5px solid var(--border-color);
 
 		outline: none;  /* [1] */
 	}
@@ -208,7 +138,95 @@
 
 		overflow: hidden; /* hidden when overflow my circle :D */
 
-		border: 5px solid white;
+		border: 10px solid var(--border-color);
+	}
+}
+
+@media screen and (max-width: 807px) {
+
+	.button-simon button {
+		width: calc(var(--size-buttons) - 135px);
+		height: calc(var(--size-buttons) - 135px);
+
+		border: 5px solid var(--border-color);
+
+		outline: none;  /* [1] */
+	}
+	.simon-control-panel {
+		background-color: var(--background-color-control-panel);
+		width:  calc(var(--size-control-panel) - 135px);
+		height: calc(var(--size-control-panel) - 135px);
+		border-radius: 50%;
+
+		overflow: hidden; /* hidden when overflow my circle :D */
+
+		border: 10px solid var(--border-color);
+	}
+}
+
+@media screen and (max-width: 667px) {
+
+	.button-simon button {
+		width: calc(var(--size-buttons) - 150px);
+		height: calc(var(--size-buttons) - 150px);
+
+		border: 2px solid var(--border-color);
+
+		outline: none;  /* [1] */
+	}
+	.simon-control-panel {
+		background-color: var(--background-color-control-panel);
+		width:  calc(var(--size-control-panel) - 150px);
+		height: calc(var(--size-control-panel) - 150px);
+		border-radius: 50%;
+
+		overflow: hidden; /* hidden when overflow my circle :D */
+
+		border: 7px solid var(--border-color);
+	}
+}
+
+@media screen and (max-width: 607px) {
+
+	.button-simon button {
+		width: calc(var(--size-buttons) - 175px);
+		height: calc(var(--size-buttons) - 175px);
+
+		border: 2px solid var(--border-color);
+
+		outline: none;  /* [1] */
+	}
+	.simon-control-panel {
+		background-color: var(--background-color-control-panel);
+		width:  calc(var(--size-control-panel) - 175px);
+		height: calc(var(--size-control-panel) - 175px);
+		border-radius: 50%;
+
+		overflow: hidden; /* hidden when overflow my circle :D */
+
+		border: 7px solid var(--border-color);
+	}
+}
+
+@media screen and (max-width: 507px) {
+
+	.button-simon button {
+		width: calc(var(--size-buttons) - 200px);
+		height: calc(var(--size-buttons) - 200px);
+
+		border: 1px solid var(--border-color);
+
+		outline: none;  /* [1] */
+	}
+	.simon-control-panel {
+		background-color: var(--background-color-control-panel);
+		width:  calc(var(--size-control-panel) - 200px);
+		height: calc(var(--size-control-panel) - 200px);
+		border-radius: 50%;
+
+		overflow: hidden; /* hidden when overflow my circle :D */
+
+		border: 5px solid var(--border-color);
 	}
 }
 
@@ -218,19 +236,19 @@
 		width: calc(var(--size-buttons) - 215px);
 		height: calc(var(--size-buttons) - 215px);
 
-		border: 1px solid white;
+		border: 1px solid var(--border-color);
 
 		outline: none;  /* [1] */
 	}
 	.simon-control-panel {
 		background-color: var(--background-color-control-panel);
-		width:  calc(var(--size-control-panel) - 110px);
-		height: calc(var(--size-control-panel) - 110px);
+		width:  calc(var(--size-control-panel) - 215px);
+		height: calc(var(--size-control-panel) - 215px);
 		border-radius: 50%;
 
 		overflow: hidden; /* hidden when overflow my circle :D */
 
-		border: 2px solid white;
+		border: 2px solid var(--border-color);
 	}
 }
 
@@ -240,19 +258,19 @@
 		width: calc(var(--size-buttons) - 230px);
 		height: calc(var(--size-buttons) - 230px);
 
-		border: 1px solid white;
+		border: 1px solid var(--border-color);
 
 		outline: none;  /* [1] */
 	}
 	.simon-control-panel {
 		background-color: var(--background-color-control-panel);
-		width:  calc(var(--size-control-panel) - 125px);
-		height: calc(var(--size-control-panel) - 125px);
+		width:  calc(var(--size-control-panel) - 230px);
+		height: calc(var(--size-control-panel) - 230px);
 		border-radius: 50%;
 
 		overflow: hidden; /* hidden when overflow my circle :D */
 
-		border: 1px solid white;
+		border: 1px solid var(--border-color);
 	}
 }
 
