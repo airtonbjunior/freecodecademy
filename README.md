@@ -20,3 +20,6 @@ Most projects are developed in [codepen.io](http://codepen.io/airtonbjunior/) to
     * [#8] [Pomodoro Clock] - [[Specification]](https://www.freecodecamp.com/challenges/build-a-pomodoro-clock) [[Solution codepen]](http://codepen.io/airtonbjunior/full/pNOOQL/) [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/advanced/pomodoroClock/)
     * [#9] [Tic Tac Toe] - [[Specification]](https://www.freecodecamp.com/challenges/build-a-tic-tac-toe-game) [[Solution codepen]](http://codepen.io/airtonbjunior/full/PWojOB/) [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/advanced/ticTacToe/)
     * [#10] [Simon Game] - [[Specification]](https://www.freecodecamp.com/challenges/build-a-simon-game) [[Solution codepen]](http://codepen.io/airtonbjunior/full/rjxRVp/) [[Solution github]](https://airtonbjunior.github.io/freecodecamp/projects/frontEnd/advanced/simonGame/)
+    
+    
+  * [My Front End Certification!](https://www.freecodecamp.com/airtonbjunior/front-end-certification)
