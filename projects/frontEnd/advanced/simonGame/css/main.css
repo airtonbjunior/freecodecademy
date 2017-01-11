@@ -18,6 +18,8 @@
 	--red-button: red;
 	--blue-button: blue;
 
+	--social-buttons-color: #fa4e5f;
+
 	--size-buttons: 300px;
 	--size-control-panel: 300px;
 
@@ -33,8 +35,14 @@
 	--font-color: white;
 }
 
+a {
+	text-decoration: none;
+	color: var(--social-buttons-color);
+}
+
 body {
 	background: var(--background-color-page);
+	overflow: hidden;
 }
 
 h1, p {
@@ -144,66 +152,21 @@ p {
 }
 
 
-/* 3rd part code [4] */ 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
 
-.switch input {display:none;}
-
-.slider {
-  	position: absolute;
-  	cursor: pointer;
-  	top: 0;
-  	left: 0;
-  	right: 0;
-  	bottom: 0;
-  	background-color: #ccc;
-  	-webkit-transition: .4s;
-  	transition: .4s;
-}
-
-.slider:before {
+.social-buttons {
 	position: absolute;
-	content: "";
-	height: 26px;
-	width: 26px;
-	left: 4px;
-	bottom: 4px;
-	background-color: white;
-	-webkit-transition: .4s;
-	transition: .4s;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	margin-bottom: 10px;
+	z-index: -1; /* My idea :D - In case of little heights */
+}
+.social-buttons > a:hover {
+	color: yellow;
 }
 
-input:checked + .slider {
-  	background-color: #2196F3;
-}
 
-input:focus + .slider {
-  	box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  	-webkit-transform: translateX(26px);
-  	-ms-transform: translateX(26px);
-  	transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  	border-radius: 34px;
-}
-
-.slider.round:before {
-	border-radius: 50%;
-}
-
-/* 3rd part code */
-
-@media screen and (max-width: 1215px) {
+@media screen and (max-width: 1232px) {
 
 	.button-simon button {
 		width: calc(var(--size-buttons) - 50px);
@@ -234,7 +197,7 @@ input:checked + .slider:before {
 	}
 }
 
-@media screen and (max-width: 1015px) {
+@media screen and (max-width: 1032px) {
 
 	.button-simon button {
 		width: calc(var(--size-buttons) - 100px);
@@ -280,7 +243,7 @@ input:checked + .slider:before {
 	}
 }
 
-@media screen and (max-width: 815px) {
+@media screen and (max-width: 832px) {
 
 	.button-simon button {
 		width: calc(var(--size-buttons) - 135px);
@@ -325,7 +288,7 @@ input:checked + .slider:before {
 	}
 }
 
-@media screen and (max-width: 675px) {
+@media screen and (max-width: 692px) {
 
 	.button-simon button {
 		width: calc(var(--size-buttons) - 150px);
@@ -350,7 +313,7 @@ input:checked + .slider:before {
 	}
 }
 
-@media screen and (max-width: 615px) {
+@media screen and (max-width: 632px) {
 
 	.button-simon button {
 		width: calc(var(--size-buttons) - 175px);
